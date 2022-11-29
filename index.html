@@ -2,30 +2,42 @@
 <html>
 
 <head>
-  <title>Shooter Game</title>
+    <title>Shooter Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <!-- TEST -->
-<body>
-  <h1>A Soldier In Action</h1>
-  <div id="introduction">
-    <h2>Description</h2>
-    <p>This is a mini platform shooter game based in Python using PyGame</p>
-    <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">Learn More</a>
-    <h3>Controls</h3>
-    <ul>
-      <li>W: Jump</li>
-      <li>A: Move Left</li>
-      <li>D: Move Right</li>
-      <li>Q: Throw Grenades</li>
-      <li>Spacebar: Shoot Bullets</li>
 
-    </ul>
-    <h3>Features</h3>
-    <p>There are pick up boxes for ammo, health and grenades which are used when you run into them</p>
+<body style="background-color: dodgerblue;">
+    <div>
+        <h1 class="text-danger bg-white text-center">A Soldier In Action</h1>
+        <div class="container justify-content-center " id="introduction">
+            <h2 class="text-white bg-dark text-center">Description</h2>
+            <p class="text-center">This is a mini platform shooter game based in Python using PyGame</p>
+            <h3 class="text-white bg-info text-center">Controls</h3>
+            <ul class="text-center">
+                <p>W: Jump</p>
+                <p>A: Move Left</p>
+                <p>D: Move Right</p>
+                <p>Q: Throw Grenades</p>
+                <p>Spacebar: Shoot Bullets</p>
 
-  <div id="media">
-    <video src="./bandicam 2022-11-08 20-23-19-343.mp4" height="240" width="320" controls>Video not supported</video>
-  </div>
+            </ul>
+            <h3 class="text-white bg-dark text-center">Features</h3>
+            <p class="text-center">There are pick up boxes for ammo, health and grenades which are used when you run
+                into them</p>
+
+            <div class="text-center card text-white bg-danger mb-3" id="media" style="width: 31.3rem;">
+                <video src="./bandicam 2022-11-08 20-24-22-820.mp4" height="500" width="500" controls>Video not
+                    supported</video>
+                <div class="card-body">
+                    <h5 class="card-title">Level 1 Walkthrough</h5>
+                    <p class="card-text">A small play-through to show what the game is like. Click below to go to my Github where you can download the code and image files</p>
+                    <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io" class="btn btn-primary">Go to Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
