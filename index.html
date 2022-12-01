@@ -1,53 +1,217 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-    <title>Shooter Game</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<!-- TEST -->
+<!--
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<body style="background-color: dodgerblue; padding-bottom: 15%;">
-    <div>
-        <h1 class=" display-2 text-success bg-white text-center">A Soldier In Action</h1>
-        <div class="container justify-content-center " id="introduction">
-            <h2 class="display-6 text-white bg-dark text-center " style="margin: 3% auto">Description</h2>
-            <p class="text-center text-white">This is a mini platform shooter game based in Python using PyGame</p>
-            <h3 class="display-6 text-white bg-info text-center" style="margin: 3% auto">Controls</h3>
-            <ul class="text-center">
-                <p class="text-white">W: Jump</p>
-                <p class="text-white">A: Move Left</p>
-                <p class="text-white">D: Move Right</p>
-                <p class="text-white">Q: Throw Grenades</p>
-                <p class="text-white">Spacebar: Shoot Bullets</p>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/bootstrap-transition.js"></script>
+    </head>
+-->
+    <head>
+        <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    </head>
+
+
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar fixed-top navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">LOGO</a>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- main content -->
+
+    <!-- HOME -->
+    <div class="container-md vh-100 pt-5" id="home">
+        <h1 class="text-center pt-5">Home</h1>
+        <div class="container-fluid">
+            <p class="text-center" style="font-family: Arial, Helvetica, sans-serif;">Welcome to my website!
+                My name is Vijayesh Khullar and on this site you will find some personal projects that I
+                made on my freetime. I am a highschool student who is eager to learn more about coding and
+                try to use different types of code. I hope you enjoy!
+            </p>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="container-md vh-100 pt-5" id="about">
+        <h1 class="text-center pt-5">About</h1>
+        <div class="container-fluid">
+            <p class="">To get a bit more in depth, below you will find a table of contents for the Projects I have
+                made,
+                a clip on how it works as well as a link to either download it or view the source code
+                through Github. This website is on a path to grow, so if you have any questions or comments,
+                my contact inofrmation is at the bottom, I am always open for any sort of feedback!</p>
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="container-md vh-100 pt-5" id="projects">
+        <h1 class="text-center pt-5">Projects</h1>
+        <div class="container-fluid">
+            <ul class="text-center" >
+                <p class="nav-itme"style="margin: 3% auto;" ><a class="nav-link active" href="#soldier">A Soldier In Action</a></p>
+                <p class="nav-itme" style="margin: 3% auto;" ><a class="nav-link active" href="#hangman">Hangman</a></p>
 
             </ul>
-            <h3 class="display-6 text-white bg-dark text-center" style="margin: 3% auto">Features</h3>
-            <p class="text-center text-white">There are pick up boxes for ammo, health and grenades which are used when you run
-                into them</p>
+        </div>
+    </div>
 
-            <div class="text-center card text-white bg-danger mb-3" id="media" style="width: 31.3rem; margin: 0 auto">
+    <!-- A SOLDIER IN ACTION -->
+    <div class="container-md vh-100 pt-5" id="soldier">
+        <h1 class="text-center pt-5">A Soldier In Action</h1>
+        <div class="container-fluid">
+
+            <div>
+                <p>This is a mini-platform shooter involving one player, the green soldier, and
+                    red enemy soldiers. The main character can throw grenades and shoot bullets
+                    as well as pickup ammo and health boxes. He must traverse through the levels and
+                    reach the exit in order to advance The controls are listed below. It is based in
+                    Python using PyGame.</p>
+                <ul class="text-center">
+                    <p class="text-black">W: Jump</p>
+                    <p class="text-black">A: Move Left</p>
+                    <p class="text-black">D: Move Right</p>
+                    <p class="text-black">Q: Throw Grenades</p>
+                    <p class="text-black">Spacebar: Shoot Bullets</p>
+
+                </ul>
+
+            </div>
+
+            <div class="text-center card text-white bg-dark mb-3 " id="media" style=" width: 31.3rem; margin: 0 auto">
                 <video src="./bandicam 2022-11-08 20-24-22-820.mp4" height="400" width="500" controls>Video not
                     supported</video>
-                <div class="card-body">
+                <div class="card-body" style="">
                     <h5 class="card-title">Level 1 Walkthrough</h5>
-                    <p class="card-text">A small play-through to show what the game is like. Click below to go to my Github where you can download the code and image files</p>
-                    <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io" class="btn btn-primary">Go to Github</a>
+                    <p class="card-text">A small play-through to show what the game is like. Click below to go to my
+                        Github where you can download the code and image files</p>
+                    <a href="https://github.com/vijayeshkhullar/shooter" class="btn btn-primary">Go to Github</a>
                 </div>
-            </div>
-            <div style="margin: 5% auto">
-                <h3 class="display-6 text-white bg-dark text-center ">Contact</h3>
-
-                <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io" class="btn btn-danger"  style="margin-left: 25%; margin-right: 4%; margin-top: 2%;">Email</a>
-                <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io" class="btn btn-success"  style="margin-left: 4%; margin-right: 4%; margin-top: 2%;">Instagram</a>
-                <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io" class="btn btn-info"  style="margin-left: 4%; margin-right: 4%; margin-top: 2%;">Twitter</a>
-                <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io" class="btn btn-warning"  style="margin-left: 4%; margin-right: 4%; margin-top: 2%;">Github</a>
-
             </div>
 
         </div>
     </div>
+
+    <!-- HANGMAN -->
+    <div class="container-md vh-100 pt-5" id="hangman" style="margin: 9% auto;">
+        <h1 class="text-center pt-5">Hangman</h1>
+        <div class="container-fluid">
+
+            <div class="text-center">
+                <p>This is a text-based hangman game created using javascript. It randomly picks
+                    a word from an array, and the user is meant to input guesses till they run out
+                    of attempts. They can choose to play again, which loops to the beginning, or end
+                    the game, which ends the program. If you choose to play again, it keeps track
+                    of the wins and losses as well as the number of games until you end the program,
+                    which resets the count. It runs on the console in eclipse, and I have
+                    not tested it elsewhere.
+                </p>
+            </div>
+        </div>
+        <!--
+        <div class="container">
+            <div id="myCarousel" class="carousel slide " style="margin: 0 auto; height: 200px; width: 400px;" data-ride="carousel">
+                Indicators
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+          
+                Wrapper for slides
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg" alt="Los Angeles" style="width:100%;">
+                </div>
+          
+                <div class="item">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(4).jpg" alt="Chicago" style="width:100%;">
+                </div>
+              
+                <div class="item">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(6).jpg" alt="New york" style="width:100%;">
+                </div>
+              </div>
+          
+               Left and right controls 
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+        </div>
+        //-->
+    </div>
+
+
+      
+            <!-- CONTACT -->
+            <div class="container-md vh-100 pt-5" id="contact" style="margin: 9% auto;">
+                <h1 class="text-center pt-5 ">Contact</h1>
+                <div class="container-fluid">
+
+                    <div style="">
+
+                        <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io"><img
+                                src="https://img.icons8.com/nolan/512/github.png"
+                                style="height: 60px; margin-left: 16%; margin-top: 2% " /></a>
+
+                        <a href=""><img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzYV2FRBMbCUB5_Uf92yAbRk9ZzX2F9zkkyI4IR70ut6sqQ3Lw"
+                                style="height: 60px; margin-left: 16%; margin-top: 2%" /></a>
+
+                        <a href="https://twitter.com/khullarvijayesh"><img
+                                src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRAI6k5ZZrvucuy0MbIpeIV-cD5_Ckzp45GaZvZPelZml7aZDjN"
+                                style="height: 60px; margin-left: 16%; margin-top: 2%" /></a>
+
+                        <a href="mailto: vijayeshkhullar7@gmail.com"><img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmxhl5XsV_aLbxfV1_7BZKTvU543qSKwMxlg&usqp=CAU"
+                                style="height: 40px; margin-left: 16%; margin-top: 2%" /></a>
+                    </div>
+                </div>
+            </div>
+
 </body>
 
 </html>
