@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <script src="js/bootstrap.js"></script>
-        <script src="js/jquery-1.7.1.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/jquery-1.7.1.min.js"></script>
-        <script src="js/bootstrap-transition.js"></script>
-    </head>
--->
+
     <head>
         <!-- CSS only -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      <link href="./style.css" rel="stylesheet">
+
+      <!-- JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
     </head>
 
 
@@ -27,7 +17,8 @@
 <body>
 
     <!-- Navbar -->
-    <div class="navbar fixed-top navbar-expand-lg bg-light">
+
+    <div class="navbar fixed-top navbar-expand-lg" style="background-color: #89c4f4; color: white;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">LOGO</a>
 
@@ -41,9 +32,18 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Projects</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                            <a class="dropdown-item" href="#soldier">SOLDIER</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#hangman">HANGMAN</a>
+                          </li>
+                        </ul>
                     </li>
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -56,66 +56,95 @@
 
 
     <!-- main content -->
+    <div class="container-md vh-100 pt-5" id="welcome">
+      <div class="container-sm">
+        <h1 class="text-center pt-5">WELCOME</h1>
+      </div>
 
+    </div>
     <!-- HOME -->
     <div class="container-md vh-100 pt-5" id="home">
-        <h1 class="text-center pt-5">Home</h1>
-        <div class="container-fluid">
-            <p class="text-center" style="font-family: Arial, Helvetica, sans-serif;">Welcome to my website!
+      <div class="container-sm">
+        <h1 class="text-center pt-5">HOME</h1>
+        <div class="container-fluid blurb rounded">
+            <p class="" style="font-family: Arial, Helvetica, sans-serif;">Welcome to my website!
                 My name is Vijayesh Khullar and on this site you will find some personal projects that I
                 made on my freetime. I am a highschool student who is eager to learn more about coding and
                 try to use different types of code. I hope you enjoy!
             </p>
         </div>
+      </div>
+
     </div>
 
     <!-- ABOUT -->
     <div class="container-md vh-100 pt-5" id="about">
-        <h1 class="text-center pt-5">About</h1>
-        <div class="container-fluid">
+      <div class="container-sm">
+        <h1 class="text-center pt-5">ABOUT</h1>
+        <div class="container-fluid blurb rounded">
             <p class="">To get a bit more in depth, below you will find a table of contents for the Projects I have
                 made,
                 a clip on how it works as well as a link to either download it or view the source code
                 through Github. This website is on a path to grow, so if you have any questions or comments,
                 my contact inofrmation is at the bottom, I am always open for any sort of feedback!</p>
         </div>
+      </div>
+
     </div>
 
     <!-- PROJECTS -->
     <div class="container-md vh-100 pt-5" id="projects">
-        <h1 class="text-center pt-5">Projects</h1>
-        <div class="container-fluid">
+      <div class="container-sm">
+        <h1 class="text-center pt-5">PROJECTS</h1>
+        <div class="container-fluid blurb rounded">
             <ul class="text-center" >
                 <p class="nav-itme"style="margin: 3% auto;" ><a class="nav-link active" href="#soldier">A Soldier In Action</a></p>
                 <p class="nav-itme" style="margin: 3% auto;" ><a class="nav-link active" href="#hangman">Hangman</a></p>
 
             </ul>
         </div>
+      </div>
+
     </div>
 
     <!-- A SOLDIER IN ACTION -->
     <div class="container-md vh-100 pt-5" id="soldier">
-        <h1 class="text-center pt-5">A Soldier In Action</h1>
-        <div class="container-fluid">
 
-            <div>
-                <p>This is a mini-platform shooter involving one player, the green soldier, and
+      <div class="container-sm">
+        <div class="container-fluid rounded">
+          <div class="row">
+
+            <div class="col align-self-start col-text">
+              <h1 class="text-center pt-5">A SOLDIER IN ACTION</h1>
+
+                <p style="color: #89c4f4">This is a mini-platform shooter involving one player, the green soldier, and
                     red enemy soldiers. The main character can throw grenades and shoot bullets
                     as well as pickup ammo and health boxes. He must traverse through the levels and
                     reach the exit in order to advance The controls are listed below. It is based in
                     Python using PyGame.</p>
-                <ul class="text-center">
-                    <p class="text-black">W: Jump</p>
-                    <p class="text-black">A: Move Left</p>
-                    <p class="text-black">D: Move Right</p>
-                    <p class="text-black">Q: Throw Grenades</p>
-                    <p class="text-black">Spacebar: Shoot Bullets</p>
-
-                </ul>
+                    <ul class="text-center">
+                        <p class="text-black">W: Jump</p>
+                        <p class="text-black">A: Move Left</p>
+                        <p class="text-black">D: Move Right</p>
+                        <p class="text-black">Q: Throw Grenades</p>
+                        <p class="text-black">Spacebar: Shoot Bullets</p>
+                    </ul>
 
             </div>
 
-            <div class="text-center card text-white bg-dark mb-3 " id="media" style=" width: 31.3rem; margin: 0 auto">
+            <div class="col align-self-end col-text">
+              <div class="card bg-dark" style="">
+                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" width="420" height="420" class="card-img-top" alt="DEMO">
+                </iframe>
+                <div class="card-body">
+                  <p class="card-text text-center">A quick demo of the game.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+            <!-- <div class="text-center card text-white bg-dark mb-3 " id="media" style=" width: 31.3rem; margin: 0 auto">
                 <video src="./bandicam 2022-11-08 20-24-22-820.mp4" height="400" width="500" controls>Video not
                     supported</video>
                 <div class="card-body" style="">
@@ -124,71 +153,46 @@
                         Github where you can download the code and image files</p>
                     <a href="https://github.com/vijayeshkhullar/shooter" class="btn btn-primary">Go to Github</a>
                 </div>
-            </div>
+            </div> -->
 
         </div>
+      </div>
+
     </div>
 
     <!-- HANGMAN -->
-    <div class="container-md vh-100 pt-5" id="hangman" style="margin: 9% auto;">
-        <h1 class="text-center pt-5">Hangman</h1>
-        <div class="container-fluid">
+    <div class="container-md vh-100 pt-5" id="hangman" style="">
 
-            <div class="text-center">
-                <p>This is a text-based hangman game created using javascript. It randomly picks
-                    a word from an array, and the user is meant to input guesses till they run out
-                    of attempts. They can choose to play again, which loops to the beginning, or end
-                    the game, which ends the program. If you choose to play again, it keeps track
-                    of the wins and losses as well as the number of games until you end the program,
-                    which resets the count. It runs on the console in eclipse, and I have
-                    not tested it elsewhere.
-                </p>
-            </div>
-        </div>
-        <!--
-        <div class="container">
-            <div id="myCarousel" class="carousel slide " style="margin: 0 auto; height: 200px; width: 400px;" data-ride="carousel">
-                Indicators
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-              </ol>
-          
-                Wrapper for slides
-              <div class="carousel-inner">
-                <div class="item active">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg" alt="Los Angeles" style="width:100%;">
-                </div>
-          
-                <div class="item">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(4).jpg" alt="Chicago" style="width:100%;">
-                </div>
-              
-                <div class="item">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(6).jpg" alt="New york" style="width:100%;">
-                </div>
+        <div class="container-sm">
+          <h1 class="text-center pt-5">HANGMAN</h1>
+          <div class="container-fluid">
+
+              <div class="container-fluid blurb rounded">
+                  <p class="">
+                    This is a text-based hangman game created using javascript. It randomly picks
+                      a word from an array, and the user is meant to input guesses till they run out
+                      of attempts. They can choose to play again, which loops to the beginning, or end
+                      the game, which ends the program. If you choose to play again, it keeps track
+                      of the wins and losses as well as the number of games until you end the program,
+                      which resets the count. It runs on the console in eclipse, and I have
+                      not tested it elsewhere.
+                  </p>
               </div>
-          
-               Left and right controls 
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
+          </div>
         </div>
-        //-->
+
+
+
     </div>
 
 
-      
+
             <!-- CONTACT -->
             <div class="container-md vh-100 pt-5" id="contact" style="margin: 9% auto;">
-                <h1 class="text-center pt-5 ">Contact</h1>
+
+
+              <div class="container-sm">
+                <h1 class="text-center pt-5 ">CONNECT WITH ME</h1>
                 <div class="container-fluid">
 
                     <div style="">
@@ -210,6 +214,9 @@
                                 style="height: 40px; margin-left: 16%; margin-top: 2%" /></a>
                     </div>
                 </div>
+              </div>
+
+
             </div>
 
 </body>

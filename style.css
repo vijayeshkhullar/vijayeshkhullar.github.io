@@ -1,0 +1,68 @@
+body{
+  font-family: sans-serif;
+  background-color: black;
+}
+
+#welcome{
+  background-image: url("https://nineplanets.org/wp-content/uploads/2020/03/mercury.png") !important;
+  background-position: bottom 50px right 100px;
+  background-repeat: no-repeat;
+}
+
+#welcome h1{
+  color: white !important;
+}
+
+.text-center{
+  padding: 3%;
+}
+
+h1{
+  color: white;
+}
+
+
+.col-text{
+  color: grey;
+}
+
+.container-md{
+  /* background-color: #eee; */
+  display: flex;
+}
+
+.container-sm{
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blurb{
+  /* background-color: #FF0066; */
+
+  font-size: 1.5em;
+  color: #89c4f4;
+  height: 20%;
+  margin-top: 2%;
+  width: 60%;
+  animation: fadeIn 5s;
+  text-align: left !important;
+}
+
+/* https://blog.hubspot.com/website/css-fade-in#:~:text=A%20CSS%20fade%20transition%20is,or%20animation%20property%20in%20CSS. */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  100% { opacity: 0; }
+  0% { opacity: 1; }
+}
+
+p{
+  /* padding-top: 2%; */
+}
