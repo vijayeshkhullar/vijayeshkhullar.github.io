@@ -1,0 +1,155 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 25px;
+    background-color: #D6C5C5;
+    color: black;
+    font-size: 25px;
+    transition: background-color 0.5s ease;
+
+}
+
+
+
+  #welcome h1{
+    color: goldenrod !important;
+  }
+
+
+.text-align{
+    text-align: right;
+}
+
+
+.switch-container {
+  text-align: right; /* Aligns the label to the right */
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position:relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #863ff7;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #8539ff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Fade in and Fade out */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  100% { opacity: 0; }
+  0% { opacity: 1; }
+}
+
+.right-align {
+  float: right;
+}
+
+/* For the image of me */
+ /* Makes the image round */
+.rounded-image {
+  width: 120%;
+  padding-top: 25%;
+  padding-right: 20%;
+  border-radius: 70%;
+}
+
+.image-container {
+  background-color: #C7955A; /* Change this to the desired background color */
+  width: 300px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  display: inline-block; /* Ensures container size matches image size */
+  border-radius: 50%; /* Makes the container round */
+  overflow: hidden; /* Clips the image within the container */
+  border: 2px solid black; /* Add border around the container */
+  box-sizing: border-box; /* Ensure border size is included in width and height */
+}
+
+.image-containertwo {
+  position: absolute;
+  top: 55%;
+  left: 20%; /* Adjust as needed for slight left alignment */
+  transform: translate(-50%, -50%);
+}
+
+/* Darkmode */
+.dark-mode {
+  background-color: #6c5252;
+  color: white;
+}
+
+
+
+.container-md{
+  /* background-color: #eee; */
+  display: flex;
+}
+
+.container-sm{
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center{
+  text-align: center;
+}
