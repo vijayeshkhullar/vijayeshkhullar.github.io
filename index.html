@@ -10,6 +10,11 @@
   <link href="./style.css" rel="stylesheet">
 
   <!-- JavaScript -->
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+    crossorigin="anonymous"></script>
+
   <script src="script.js"> myFunction()</script>
 </head>
 
@@ -19,7 +24,6 @@
 
 
   <!-- Navbar -->
-
   <div class="navbar fixed-top navbar-expand-lg" style="background-color: #C7ACA1; color: white;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="mylogo.png" style="height: 50px; width: 60px;" /></a>
@@ -36,19 +40,17 @@
               aria-expanded="false" href="#">Projects</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li>
+                <a class="dropdown-item" href="#gesturepuppet">Gesture Puppet</a>
+              </li>
+              <li>
                 <a class="dropdown-item" href="#vanhelsing">VAN HELSING</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#hangman">HANGMAN</a>
+                <a class="dropdown-item" href="#atm">BANKING</a>
               </li>
-              <li>
-                <a class="dropdown-item" href="#banking">BANKING</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#hand">Hand Gesture & Movement (in progress)</a>
-              </li>
+
             </ul>
-          </li>
+          </li> 
 
 
           <li class="nav-item">
@@ -70,6 +72,9 @@
     
     </div>
   </div>
+
+
+
 
   <div class ="image-containertwo">  
     <div class="image-container">
@@ -99,6 +104,43 @@
   </div>
 
 </div>
+
+
+  <!-- Gesture Pupper -->
+  <div class="container-md vh-100 pt-5" id="gesturepuppet">
+
+    <div class="container-sm">
+      <div class="container-fluid rounded">
+        <div class="row">
+
+          <div class="col align-self-start col-text">
+            <h1 class="text-center pt-5">Gesture Puppet</h1>
+
+            <p class="" style="font-family: Arial, Helvetica, sans-serif; text-align: center;">This is an in progress Hand Gesture control project. It 
+            uses computer vision to detect hand gestures through the camera webcam. The detected gestures are sent to a microcontroller in which I am 
+            puppeteering a 3D printed hand that I am designing. This project can be implemented
+        to puppeteer anything. I am using a GitHub repository originally from Kazuhito Takahashi, and translated by Nikita Kiselov which consists of the base 
+        code that maps and reads the hand gestures. I will provide the altered code and arduino code on my GitHub.</p>
+
+          </div>
+          <!--  Video Removed For Now 
+          <div class="col align-self-end col-text">
+            <div class="card bg-dark" style="">
+
+              <video width="420" height="420" class="card-img-top" alt="DEMO" controls>
+              <source src="vanhelsing.mp4" type="video/mp4">
+              </video>
+
+              <div class="card-body">
+              </div>
+            </div>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
 
 
 <!-- VAN HELSING -->
@@ -145,6 +187,41 @@
 </div>
 </div>
 
+
+
+  <!-- Automated Teller Machine -->
+  <div class="container-md vh-100 pt-5" id="atm">
+
+    <div class="container-sm">
+      <div class="container-fluid rounded">
+        <div class="row">
+
+          <div class="col align-self-start col-text">
+            <h1 class="text-center pt-5">Automated Teller Machine</h1>
+
+            <p class="" style="font-family: Arial, Helvetica, sans-serif; text-align: center;">            
+              This is banking site using Java. It includes account registration, account login, deposits, withdrawals, 
+              transfers, account deletion and some other features. All that is needed is to connect to a server 
+              in order to keep accounts registered. This uses a GUI in eclipse and I have not tested it elsewhere.</p>
+
+          </div>
+
+          <div class="col align-self-end col-text">
+            <div class="card bg-dark" style="">
+
+              <video width="420" height="420" class="card-img-top" alt="DEMO" controls>
+              <source src="javabanking.mp4" type="video/mp4">
+              </video>
+
+              <div class="card-body">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
 
 <!-- CONTACT -->
 <div class="container-md vh-100 pt-5" id="contact" style="margin: 9% auto;">
