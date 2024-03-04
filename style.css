@@ -65,11 +65,11 @@ body{
 }
 
 input:checked + .slider {
-  background-color: #863ff7;
+  background-color: goldenrod;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #8539ff;
+  box-shadow: 0 0 1px goldenrod;
 }
 
 input:checked + .slider:before {
