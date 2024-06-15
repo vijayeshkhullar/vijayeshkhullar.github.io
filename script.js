@@ -1,26 +1,23 @@
 document.getElementById('toggle-theme').addEventListener('click', function() {
-    const body = document.body;
-    const button = document.getElementById('toggle-theme');
-    const themeIcon = document.getElementById('theme-icon');
-    const circle = document.querySelector('.circle');
+  const body = document.body;
+  const themeIcon = document.getElementById('theme-icon');
+  const circle = document.querySelector('.circle');
 
-    // Change color for dark mode
-    if (body.style.backgroundColor === 'white') {
-        body.style.backgroundColor = '#121212';
-        body.style.color = '#D6CACA';
-        themeIcon.src = 'darkmode.png';
-        circle.style.backgroundColor = '#D6CACA';
-
-
-    } else {// Change color for light mode
-        body.style.backgroundColor = 'white';
-        body.style.color = '#000000';
-        themeIcon.src = 'lightmodelogo.png';
-        circle.style.backgroundColor = '#f39c12'; 
-
-    }
+  // Toggle between dark and light modes
+  if (body.classList.contains('dark-mode')) {
+      body.classList.remove('dark-mode');
+      body.classList.add('light-mode');
+      themeIcon.src = 'lightmodelogo.png';
+      circle.classList.remove('dark-mode');
+      circle.classList.add('light-mode');
+  } else {
+      body.classList.remove('light-mode');
+      body.classList.add('dark-mode');
+      themeIcon.src = 'darkmode.png';
+      circle.classList.remove('light-mode');
+      circle.classList.add('dark-mode');
+  }
 });
-
 
 // Function to handle scroll event
 function handleScroll() {
