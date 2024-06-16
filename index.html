@@ -20,7 +20,7 @@
         <nav>
             <ul>
                 <li><a href="https://vijayeshkhullar.github.io/">Home</a></li>
-                <li><a href="https://vijayeshkhullar.github.io/aboutme/">About</a></li>
+                <li><a href="#about-me">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="https://github.com/vijayeshkhullar"  target="_blank">GitHub</a></li>
             </ul>
@@ -60,7 +60,7 @@
         <!-- Project Rectangles-->
         <div class="rectangles-container">
             <div class="rectangle">
-                <a href="https://www.remove.bg/upload">
+                <a href="#electric-atv">
                     <img src="car.png" alt="Electric ATV Logo" style="height: 70px; width: 70px;"/>
                     <div class="content">
                         <div class="date">June 14, 2024</div>
@@ -69,7 +69,7 @@
                 </a>
             </div>
             <div class="rectangle">
-                <a href="#">
+                <a href="#hand-gesture">
                     <img src="handlogo.png" alt="Puppet Logo" />
                     <div class="content">
                         <div class="date">June 14, 2024</div>
@@ -78,10 +78,10 @@
                 </a>
             </div>
             <div class="rectangle">
-                <a href="#">
+                <a href="#van-helsing">
                     <img src="vanhelsing.png" alt="Van Helsing Logo" style="height: 30px; width: 25px;" />
                     <div class="content">
-                        <div class="date">June 14, 2024</div>
+                        <div class="date">July 18, 2023</div> <!--CHeck the actual date from github-->
                         <div class="title">Van Helsing</div>
                     </div>
                 </a>
@@ -126,6 +126,97 @@
 
         </div>
     </div>
+
+
+
+    <!-- About Me Section-->
+    <div class="container-md vh-100 pt-5" id="about-me">
+        <header>
+            <h1 style = "Helvetica Now Pro Display ExtraBold; color: aqua; text-align: center; margin-right: 13%;" >About Me</h1>
+            
+            <div class="about-column">
+            <p style = "Helvetica Now Pro Display ExtraBold;">I am currently an Engineering Student at the University of British Columbia! The goal of this 
+            website is to share my progress as an engineer while I work on variou projects throughout the years.</p>
+
+            </div>
+        </header>
+
+    </div>
+
+
+    <!-- Electric ATV Section -->
+    <div class="container-md vh-100 pt-5" id="electric-atv">
+
+        <div >
+            <img src="car.png" style="height: 200px; width: 225px" id="car" alt="Car Animation" class="car animate">
+            <script src="script.js"></script>
+            </div>
+        <header>
+
+            <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: left; margin-right: 13%;" >Electric ATV</h1>
+            
+            <div class="electric-atv-column">
+            <p style = "Helvetica Now Pro Display ExtraBold;">In this project I aim to fully convert a gas powered atv into electric. I picked up an 
+            old atv that was not working and took it apart completely to understand what was needed and how everything worked. The overarching goals 
+            involve:</p>
+
+            <li>Fixing the braking system to work with the motor</li>
+            <li>Build a 48V Battery for a 1800W motor</li>
+            <li>Making sure the motor sprocket required to drive the rear wheels would not snap the shaft</li>
+            <li>Add in features such as reverse and three speed switches</li>
+            <li>Wiring along the ATV</li>
+
+            </div>
+
+
+
+        </header>
+
+    </div>
+
+
+    <!-- Hand gesture -->
+    <div class="container-md vh-100 pt-5" id="hand-gesture">
+        <header>
+            <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 170px;" >Hand Gesture Puppet</h1>
+            
+            <div class="hand-column" style="  column-count: 2; ">
+            <p style = "Helvetica Now Pro Display ExtraBold;">This project involves designing and printing a functional 3D hand that can be controlled with a microcontroller.
+            Then, using a neural network trained to recognize hand gestures, mimic them on the articulated hand. The ultimate goal is to make the system independent of a laptop or PC using 
+            ESP-32 controllers, which are small wifi and bluetooth microcontrollers. I chose them for this project as they can be fitted with cameras and integrated with recognition software.</p>
+            </div>
+            <div class="electric-atv-column" style="width: 400px;">
+            <p style = "Helvetica Now Pro Display ExtraBold;" >  </p>
+
+            </div>
+        </header>
+
+    </div>
+
+
+
+        <!-- Van Helsing Section -->
+        <div class="container-md vh-100 pt-5" id="van-helsing">
+            <header>
+                <h1  style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: left; margin-right: 13%;"  >Van Helsing</h1>
+                
+                <div class="electric-atv-column">
+                    <p style = "Helvetica Now Pro Display ExtraBold;">This is a platformer Vampire Hunter game based on Van Helsing made using pygame and python!
+                    The you can download the game here and the assets here, just unzip the assets and drag the game executable into the folder and click to play! Note that 
+                windows may detect the game as a virus. </p>
+                
+                
+                <ul style="text-align: left;">
+                    <li>W: Jump</li>
+                    <li>A: Move Left</li>
+                    <li>D: Move Right</li>
+                    <li>Q: Throw Crystals</li>
+                    <li>Spacebar: Shoot Bullets</li>
+                  </ul>
+                    </div>
+                </header>
+        
+            </div>
 
     </body>
 

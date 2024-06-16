@@ -19,12 +19,33 @@ document.getElementById('toggle-theme').addEventListener('click', function() {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+
+	// Use Intersection Observer to determine if objects are within the viewport
+	const observer = new IntersectionObserver(entries => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting) {
+		  entry.target.classList.add('in-view');
+		  return;
+		}
+		entry.target.classList.remove('in-view');
+	  });
+	});
+
+	// Get all the elements with the .animate class applied
+	const allAnimatedElements = document.querySelectorAll('.animate');
+
+	// Add the observer to each of those elements
+	allAnimatedElements.forEach((element) => observer.observe(element));
+
+}); 
+
 // Function to handle scroll event
 function handleScroll() {
     const circle = document.querySelector('.circle');
     const triangleRed = document.querySelector('.triangle-red');
     const triangleNavy = document.querySelector('.triangle-navy');
-  
+    
     // Check if user has scrolled past certain point (adjust as needed)
     if (window.scrollY > 200 && window.innerWidth > 768) { // Ensure scroll trigger only applies on larger screens
       // Add hide class to slide elements off to the left
@@ -52,3 +73,6 @@ function handleScroll() {
   
 
 
+
+
+  

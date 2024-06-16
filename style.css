@@ -5,12 +5,17 @@
     font-style: normal;
 }
 
+
 body {
     margin: 0;
     font-family: 'Helvetica Now Pro Display', Arial, sans-serif;
     background-color: #121212;
     color: #D6CACA;
+
 }
+
+
+
 body.dark-mode {
   background-color: #121212;
   color: #D6CACA;
@@ -20,6 +25,9 @@ body.light-mode {
   background-color: #D6CACA;
   color: #000000;
 }
+
+
+/*Navbar*/
 nav {
     display: flex;
     justify-content: center;
@@ -82,6 +90,8 @@ button#toggle-theme:active {
     transform: scale(0.95);
 }
 
+
+/*Headers and texts*/
 header {
     text-wrap: wrap;
     text-align: right;
@@ -97,7 +107,7 @@ header h1 {
 
 p{
   font-size: 2.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
 }
 
 h1 {
@@ -111,20 +121,36 @@ header p {
     margin-bottom: 5em;
 }
 
-
+/*Columns of text*/
   .column {
-    width: 1125px; /* Example width for column */
-    text-align: left; /* Aligns text to the right */
-    padding-left: 60%; /* Example padding for column */
+    width: 1125px; 
+    text-align: left; 
+    padding-left: 60%; 
   }
 
+  .about-column {
+    width: 800px;
+    text-align: left;
+    padding-left: 30%;
+}
+.electric-atv-column{
+  text-align: left;
+  width: 500px;
+}
+
+.hand-column{
+  text-align: left;
+  width: 1000px;
+  padding-left: 15%
+}
+
+
+/*Containers*/
 .container-md{
-    /* background-color: #eee; */
     display: flex;
 }
   
   .container-sm{
-    /* background-color: white; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,14 +161,8 @@ header p {
     text-align: center;
 }
   
-.intro{
-    position: absolute;
-    left: 30%;
-    top: 25%;
-    
-}
 
-  
+/*Shapes*/
   .circle {
     position: absolute;
     bottom: 35%;
@@ -153,9 +173,9 @@ header p {
     border-radius: 50%;
 }
   .semicircle{
-    width: 35vw; /* Adjust width as needed */
-    height: 10vw; /* Half of the desired diameter */
-    border-radius: 0 0 15vw 15vw; /* 50% border radius for the bottom */
+    width: 35vw; 
+    height: 10vw; 
+    border-radius: 0 0 15vw 15vw; 
     overflow: hidden;
     position: absolute;
     top: 100%;
@@ -164,7 +184,7 @@ header p {
   }
   
   .circle.dark-mode {
-    background-color: #D6CACA; /* Dark mode color */
+    background-color: #D6CACA; 
   }
   .circle.light-mode {
     background-color: #f39c12;
@@ -195,25 +215,27 @@ header p {
     border-bottom: 20vw solid #2c3e50;
   }
 
+
+  /*Text Highlight*/
   .highlight{
     color: #e74c3c;
   }
 
 
-
+/*Transition off screen*/
   .circle, .triangle-red, .triangle-navy {
-    transition: transform 1s ease-out; /* Smooth transition for hiding/showing */
+    transition: transform 1s ease-out;
 }
 
 .hide {
-    transform: translateX(-400%); /* Moves elements out of view */
+    transform: translateX(-400%); 
 }
 
 
   
   @media (max-width: 768px) {
     .circle, .triangle-red, .triangle-navy {
-      display: none; /* Hide elements completely on smaller screens */
+      display: none; 
     }
   }
   
@@ -237,8 +259,8 @@ header p {
 }
 
 .rectangle a {
-    color: inherit; /* Inherit the color from the parent element */
-    text-decoration: none; /* Remove the underline */
+    color: inherit; 
+    text-decoration: none;
     display: flex;
     align-items: center;
     width: 100%;
@@ -276,4 +298,22 @@ header p {
     .rectangles-container {
         flex-direction: column;
     }
+}
+@keyframes drive {
+  0% {
+      left: -200px; /* Starting off-screen */
+  }
+  100% {
+      left: calc(100% - 1500px); /* Adjust this value to stop at the desired point */
+  }
+}
+
+    .car {
+        position: absolute;
+        left: -200px; /* Start off-screen */
+        padding-bottom: 0%;
+    }
+
+.car.in-view{
+  animation: drive 2s linear forwards; /* Animation runs once and stops at the end */
 }
