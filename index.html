@@ -17,9 +17,10 @@
     </head>
 
     <body class="dark-mode">
+        
+        
         <nav>
             <ul>
-                <li><a href="https://vijayeshkhullar.github.io/">Home</a></li>
                 <li><a href="#about-me">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="https://github.com/vijayeshkhullar"  target="_blank">GitHub</a></li>
@@ -183,13 +184,20 @@
             <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 170px;" >Hand Gesture Puppet</h1>
             
             <div class="hand-column" style="  column-count: 2; ">
-            <p style = "Helvetica Now Pro Display ExtraBold;">This project involves designing and printing a functional 3D hand that can be controlled with a microcontroller.
-            Then, using a neural network trained to recognize hand gestures, mimic them on the articulated hand. The ultimate goal is to make the system independent of a laptop or PC using 
+            <p style = "Helvetica Now Pro Display ExtraBold;">This project involves designing and printing a functional 3D hand that can be controlled with a microcontroller and a few servos.
+            Then, using a neural network trained to recognize hand gestures, use a camera or webcam to mimic them on the articulated hand. 
+            </p><p>The ultimate goal is to make the system independent of a laptop or PC using 
             ESP-32 controllers, which are small wifi and bluetooth microcontrollers. I chose them for this project as they can be fitted with cameras and integrated with recognition software.</p>
             </div>
             <div class="electric-atv-column" style="width: 400px;">
             <p style = "Helvetica Now Pro Display ExtraBold;" >  </p>
 
+            </div>
+            <div class="video" style="margin-left: 35%; height: 70%; width: 70%;">
+                <video width="100%" controls>
+                    <source src="finger animation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </header>
 
@@ -198,7 +206,7 @@
 
 
         <!-- Van Helsing Section -->
-        <div class="container-md vh-100 pt-5" id="van-helsing">
+        <div class="container-md vh-100 pt-5" id="van-helsing" style=" margin-top: 10%;">
             <div >
                 <img src="vanhelsing.png" style="height: 30px; width: 25px;" id="van" alt="van Animation" class="van animate">
                 <script src="script.js"></script>
@@ -210,18 +218,22 @@
                     <p style = "Helvetica Now Pro Display ExtraBold;">This is a platformer Vampire Hunter game based on Van Helsing made using pygame and python!
                     The you can download the game here and the assets here, just unzip the assets and drag the game executable into the folder and click to play! Note that 
                 windows may detect the game as a virus. </p>
-                
-                
-                <ul style="text-align: left;">
-                    <li>W: Jump</li>
-                    <li>A: Move Left</li>
-                    <li>D: Move Right</li>
-                    <li>Q: Throw Crystals</li>
-                    <li>Spacebar: Shoot Bullets</li>
-                  </ul>
-                    </div>
+            </div>
+
+            <ul class="game-controls">
+                <li>W: Jump</li>
+                <li>A: Move Left</li>
+                <li>D: Move Right</li>
+                <li>Q: Throw Crystals</li>
+                <li>Spacebar: Shoot Bullets</li>
+            </ul>
                 </header>
-        
+                <div class="video" style="margin-top: 15%; height: 100%; width: 110%;">
+                    <video width="100%" controls>
+                        <source src="vanhelsing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
 
     </body>
@@ -231,7 +243,15 @@
 
 
 
+    <div class="container-sm">
+        <>
+    </div>
+
+
     <script src="script.js"></script>
+
+
+
 
 
 </html>

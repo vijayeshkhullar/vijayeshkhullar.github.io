@@ -299,6 +299,9 @@ header p {
         flex-direction: column;
     }
 }
+
+
+/*Animations*/
 @keyframes drive {
   0% {
       left: -200px; /* Starting off-screen */
@@ -329,6 +332,8 @@ header p {
   animation: drive 2s linear forwards; /* Animation runs once and stops at the end */
 }
 
+
+/*Light and dark mode*/
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
@@ -355,3 +360,10 @@ body.light-mode {
   background-color: #f39c12;
 }
 
+
+.game-controls{
+  margin-left: 20%;
+  text-align: center;
+  padding-bottom: 20px;
+  width: 50%;
+}
