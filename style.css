@@ -308,12 +308,50 @@ header p {
   }
 }
 
-    .car {
-        position: absolute;
-        left: -200px; /* Start off-screen */
-        padding-bottom: 0%;
-    }
+.car {
+    position: absolute;
+    left: -200px; /* Start off-screen */
+    padding-bottom: 0%;
+}
 
 .car.in-view{
   animation: drive 2s linear forwards; /* Animation runs once and stops at the end */
 }
+
+.van{
+  position: absolute;
+  left: -200px; /* Start off-screen */
+  padding-bottom: 20%;
+
+}
+
+.van.in-view{
+  animation: drive 2s linear forwards; /* Animation runs once and stops at the end */
+}
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.circle {
+  transition: background-color 0.5s ease;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #D6CACA;
+}
+
+body.light-mode {
+  background-color: D6CACA;
+  color: #000000;
+}
+
+.circle.dark-mode {
+  background-color: #D6CACA;
+}
+
+.circle.light-mode {
+  background-color: #f39c12;
+}
+

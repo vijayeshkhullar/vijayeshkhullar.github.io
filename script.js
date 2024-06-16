@@ -19,6 +19,8 @@ document.getElementById('toggle-theme').addEventListener('click', function() {
   }
 });
 
+
+// Animation for stuff later in page
 document.addEventListener("DOMContentLoaded", () => {
 
 	// Use Intersection Observer to determine if objects are within the viewport
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 }); 
 
-// Function to handle scroll event
+// Function to scroll away
 function handleScroll() {
     const circle = document.querySelector('.circle');
     const triangleRed = document.querySelector('.triangle-red');
