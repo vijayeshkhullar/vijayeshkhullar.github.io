@@ -17,7 +17,7 @@ body {
 
 
 body.dark-mode {
-  background-color: #121212;
+  background-color: #023065;
   color: #D6CACA;
 }
 
@@ -232,7 +232,6 @@ header p {
 }
 
 
-  
   @media (max-width: 768px) {
     .circle, .triangle-red, .triangle-navy {
       display: none; 
@@ -307,7 +306,7 @@ header p {
       left: -200px; /* Starting off-screen */
   }
   100% {
-      left: calc(100% - 1500px); /* Adjust this value to stop at the desired point */
+      left: calc(100% - 1310px); /* Adjust this value to stop at the desired point */
   }
 }
 
@@ -318,7 +317,7 @@ header p {
 }
 
 .car.in-view{
-  animation: drive 2s linear forwards; /* Animation runs once and stops at the end */
+  animation: drive 1s linear forwards; /* Animation runs once and stops at the end */
 }
 
 .van{
@@ -333,37 +332,45 @@ header p {
 }
 
 
-/*Light and dark mode*/
-body {
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.circle {
-  transition: background-color 0.5s ease;
-}
-
-body.dark-mode {
-  background-color: #1e1e1e;
-  color: #D6CACA;
-}
-
-body.light-mode {
-  background-color: D6CACA;
-  color: #000000;
-}
-
-.circle.dark-mode {
-  background-color: #D6CACA;
-}
-
-.circle.light-mode {
-  background-color: #f39c12;
-}
-
 
 .game-controls{
   margin-left: 20%;
   text-align: center;
   padding-bottom: 20px;
   width: 50%;
+}
+
+.carousel{
+  margin-left: 200px;
+  margin-top: 200px;
+  height: 450px;
+  width: 600px;
+}
+
+.carousel-caption.custom-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+/* Scroll Button*/
+#scrollButton {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
 }
