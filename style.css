@@ -172,6 +172,10 @@ header p {
     background-color: #D6CACA;
     border-radius: 50%;
 }
+
+
+
+
   .semicircle{
     width: 35vw; 
     height: 10vw; 
@@ -306,7 +310,7 @@ header p {
       left: -200px; /* Starting off-screen */
   }
   100% {
-      left: calc(100% - 1310px); /* Adjust this value to stop at the desired point */
+      left: calc(100% - 1500px); /* Adjust this value to stop at the desired point */
   }
 }
 
