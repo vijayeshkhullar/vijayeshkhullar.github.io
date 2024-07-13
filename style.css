@@ -310,7 +310,7 @@ header p {
       left: -200px; /* Starting off-screen */
   }
   100% {
-      left: calc(100% - 1500px); /* Adjust this value to stop at the desired point */
+      left: calc(100% - 1200px); /* Adjust this value to stop at the desired point */
   }
 }
 
