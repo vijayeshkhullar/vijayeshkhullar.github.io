@@ -80,3 +80,17 @@ function handleScroll() {
   document.getElementById('scrollButton').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const enterBtn = document.querySelector(".enter-btn");
+
+  // Disable scrolling initially
+  document.body.classList.add("start-screen-active");
+
+  enterBtn.addEventListener("click", function () {
+      // Slide up the start screen and enable scrolling
+      document.body.classList.remove("start-screen-active");
+      document.body.classList.add("slid-up");
+  });
+});

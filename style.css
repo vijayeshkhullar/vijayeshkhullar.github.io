@@ -17,7 +17,7 @@ body {
 
 
 body.dark-mode {
-  background-color: #023065;
+  background-color: #010d1b;
   color: #D6CACA;
 }
 
@@ -33,7 +33,7 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 1em 2em;
-    background-color: #1e1e1e;
+    background-color: #000000;
 }
 
 nav ul {
@@ -377,4 +377,43 @@ header p {
   width: 3vw;
   height: 3vw;
   border-radius: 50%;
+}
+
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0A0A0A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s ease-in-out;
+  z-index: 10;
+}
+
+body.slid-up .start-screen {
+  transform: translateY(-100%); /* Slide the start screen up */
+}
+
+
+
+body.start-screen-active {
+  overflow: hidden; /* Prevent scrolling while start screen is visible */
+}
+
+body.slid-up {
+  overflow: auto; /* Enable scrolling after slide-up */
+}
+
+.enter-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
 }
