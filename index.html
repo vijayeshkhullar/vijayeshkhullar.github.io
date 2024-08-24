@@ -27,8 +27,8 @@
         
         <nav>
             <ul>
-                <li><a href="#about-me">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#about-me">About</a></li>
                 <li><a href="https://github.com/vijayeshkhullar"  target="_blank">GitHub</a></li>
             </ul>
             <button id="toggle-theme">
@@ -162,77 +162,199 @@
     </div>
     <header>
         <div class="row">
+            
             <div class="col-md-6">
                 <h1 style="Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: left;">Electric ATV</h1>
                 <div class="electric-atv-column">
                     <p style="Helvetica Now Pro Display ExtraBold;">
-                        In this project I aim to fully convert a gas powered atv into electric. I picked up an
-                        old atv that was not working and took it apart completely to understand what was needed and how everything worked. The overarching goals 
-                        involve fixing the braking system to work with the motor, making sure the motor sprocket required to drive the rear wheels would not snap the shaft, 
-                        add in features such as reverse and three speed switches and build a 48V Battery for a 1800W motor.
-                    </p>
-                    <p>
-                        The pictures show my 48.1V battery built with 18650 cells in a 7 parallel, 13 series configuration. 
-                        It should run for 24 minutes at full throttle, pending tests. The red wires on the top left are for 
-                        power and charging, and the bottom right wire is ground. I designed and 3D printed the brackets. The 
-                        BMS regulates current, prevents overcharging, and handles up to 50 amps, while my motor controller 
-                        uses 33 amps. The side view shows wire connections through a ribbon cable to the BMS, alternating 
-                        through all positive terminals and connecting to the negative terminal.
-
+                        This project involves the conversion of a traditional 110CC gasoline-powered ATV into a fully electric vehicle. 
+                        The transformation leverages modern electric vehicle (EV) technology, including a custom-built 48V battery and 
+                        an electric motor, to create an eco-friendly and efficient mode of transportation. The project showcases the 
+                        integration of new technologies with existing mechanical systems, demonstrating a hands-on approach to 
+                        innovation and sustainability.
                     </p>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+                <div id="mainContent">
+                    <button class="openOverlayBtn" id="openOverlayBtn">Read More</button>
+                </div>
+                
+                
 
-                    </ol>
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="batwhole.png" alt="whole" style="width:100%;">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="batside.png" alt="side" style="width:100%;">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="batbot.png" alt="bottom" style="width:100%;">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="battop.png" alt="top" style="width:100%;">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="bms.png" alt="bms" style="height: 80% ;width:90%; padding-right: 120px">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
+                <div id="overlayScreen" class="hidden">
+                    <div class="header">
+                        <button id="backBtn">← Back</button>
                     </div>
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only"></span>
-                    </a>
+                   <div class="container-md vh-100 pt-5" id="electric-atv">
+                    <header>
+                        <h1 style="Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 30%;">Electric ATV</h1>
+
+                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Overview</h2>
+                            <p>The primary goal of this project is to explore the feasibility and benefits of converting a small 
+                                off-road vehicle to electric power. By replacing the internal combustion engine with an electric 
+                                motor and battery system, the project aims to reduce emissions, improve energy efficiency, and 
+                                enhance the vehicle’s performance. Additionally, the project serves as a learning experience, 
+                                allowing for the development of skills in areas such as battery construction, electrical system 
+                                integration, and mechanical design.
+
+                                This project is a step towards understanding the intricacies of electric vehicles, contributing 
+                                to the growing field of sustainable transportation. Through this conversion, the project also 
+                                aims to inspire others to explore similar innovations in their own vehicles or machines.
+                                
+                                </p>
+                        </div>
+
+                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Objectives</h2>
+                            <p>
+                                In the full conversion, there are three main goals: 
+                                <br>
+                                <br>    • Building the Battery
+                                <br>    • Adding the Electric Motor
+                                <br>    • Modifying the current system to add motor braking and reversing
+                                <br>
+                                <br> With the completion of these goals, the ATV will run solely on electric power.
+                            </p>
+                        </div>
+
+                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Part Selection</h2>
+                            <p>
+                                While selecting the necessary components, I had to consider several key factors such as 
+                                weight of the rider and ATV itself, the speed and torque required from the motor, the battery and 
+                                BMS that would sufficiently power the motor and implementation of the other functionalities. 
+                                For the motor, I ended up choosing the Vevor motor which was a fairly cost effective (under $160) and with 
+                                decent power 1800 rpm. Furthermore, the motor comes with its own speed controller which is incredibly useful
+                                in moderating power and various functions for the motor. For the battery, I chose standard 18650 cells, in a 
+                                13 series and 7 parallel configuration since they are commonly used for building battery packs. Additionally, I chose 
+                                a rather high tolerance Battery Managment System (BMS), with max amperage at 50A, a lot higher than the 33A required for 
+                                the motor. The ATV frame chosen was a cheap 110cc ATV that was being discarded and sold for parts, but luckily came with the 
+                                frame, steering and axles intact.
+                            </p>
+                        </div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-6" style="margin-top: 25%;">
+                                
+
+                                <div class="electric-atv-column" >
+                                    <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Battery</h2>
+  
+                                    <p style="Helvetica Now Pro Display ExtraBold;">
+                                        The pictures show my 48.1V battery built with 18650 cells in a 7 parallel, 13 series configuration. 
+                                        It should run for 24 minutes at full throttle, pending tests. The red wires on the top left are for 
+                                        power and charging, and the bottom right wire is ground. I designed and 3D printed the brackets. The 
+                                        BMS regulates current, prevents overcharging, and handles up to 50 amps, while my motor controller 
+                                        uses 33 amps. The side view shows wire connections through a ribbon cable to the BMS, alternating 
+                                        through all positive terminals and connecting to the negative terminal. The connections were formed 
+                                        using nickel strips and a spot welder.
+                
+                                    </p>
+                                </div>
+                                
+            
+                                
+                            </div>
+                
+                            <div class="col-md-6">
+                                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+                
+                                    </ol>
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="batwhole.png" alt="whole" style="width:100%;">
+                                            <div class="carousel-caption">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="batside.png" alt="side" style="width:100%;">
+                                            <div class="carousel-caption">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="batbot.png" alt="bottom" style="width:100%;">
+                                            <div class="carousel-caption">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="battop.png" alt="top" style="width:100%;">
+                                            <div class="carousel-caption">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="bms.png" alt="bms" style="height: 80% ;width:90%; padding-right: 120px">
+                                            <div class="carousel-caption">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Left and right controls -->
+                                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only"></span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Problems Along The Way</h2>
+                            <p>
+                                The conversion was easier said than done, with quite a few issues along the way. First was a 
+                                charger with lower capacity than the battery, with a max charge at 42V compared to the max charge for my 
+                                battery at 54.6V. Therefore, the testing for the motor was done using nominal voltages at around 48V. 
+                                Second, and a major issue, was fitting a new sprocket on the motor to fit the chain of the old rear axle assembly.
+                                I was not able to find a pre-made part, which meant designing and getting the piece custome made. Then an issue with 
+                                mounting the motor, as it was vastly different from the original engine, and a temporary wooden mount showed to be too brittle.
+                            </p>
+                        </div>
+
+
+                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The ATV</h2>
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%; padding-bottom: 10%;">
+
+                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Future Additions</h2>
+                            <p>
+                                I plan on using the speed controller to add in reverse and motor braking onto the ATV through a control panel. 
+                                Using a microcontroller, I also plan on adding a GPS and Speedometer independetly from current systems such as Google 
+                                Maps.
+                            </p>
+                        </div>
+
+
+
+                    </header>
                 </div>
+
+                
             </div>
+
         </div>
+
+
     </header>
 </div>
 
@@ -244,25 +366,118 @@
         <header>
             <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 170px;" >Hand Gesture Puppet</h1>
             
-            <div class="hand-column" style="  column-count: 2; ">
-            <p style = "Helvetica Now Pro Display ExtraBold;">In this Project, I designed and 3D printed a 3-Finger Hand that moves using servos and arduino. Connected to a laptop, I used computer vision to 
-                recognize hand gestures and had it mimic the gestures through the hand.
-            </p><p>Below is a clip of the project. Some parts to improve is the rotation of the fingers and improve the speed of recognition while sending the arduino the signals, though I am satisified 
-                with the current project! You can click 
-                <a href="Hand Gesture Project.zip" download="Hand Gesture Project.zip">here</a> to download all the necessary files.
+            <div class="hand-column" style="">
+            <p style = "Helvetica Now Pro Display ExtraBold;">This project showcases a sophisticated integration of MediaPipe, 
+                computer vision, and robotics to create an interactive system that translates hand gestures into physical actions. 
+                By employing a custom-designed 3D-printed robotic hand and interfacing it with an Arduino board, the system enables 
+                real-time gesture mimicry, offering a novel approach to human-computer interaction.
+
             </p>
             </div>
-            <div class="electric-atv-column" style="width: 400px;">
-            <p style = "Helvetica Now Pro Display ExtraBold;" >  </p>
 
+            <!--OVERLAYSCREEN-->
+            <div id="mainContent">
+                <button class="openOverlayBtn" id="openOverlayBtn2">Read More</button>
             </div>
-            <div class="video" style="margin-left: 35%; height: 70%; width: 70%;">
-                <video width="100%" controls>
-                    <source src="handvideo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        
+            <div id="overlayScreen2" class="hidden">
+                <div class="header">
+                    <button id="backBtn2">← Back</button>
+                </div>
+                <header>
+                    <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 170px;" >Hand Gesture Puppet</h1>
+                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Overview</h2>
+                        <p>
+                            This project integrates MediaPipe and computer vision technologies to recognize 
+                            hand gestures and translate them into physical movements using a 3D-printed robotic hand. 
+                            By leveraging gesture recognition to interface with an Arduino board, the project aims 
+                            to create an interactive and responsive robotic hand that mimics human gestures.
+                        </p>
+                    </div>
+
+                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Objectives</h2>
+                        <p>
+                            The goal was to understand the workings of the neural network to not only train different gestures, 
+                            but be able to incorporate arduino communication with a microcontroller. The two main goals were:
+                            <br>
+                            <br>    • Robotic Hand Design: Design and 3D-print a robotic hand capable of replicating various gestures.
+                            <br>    • Arduino Integration: Develop an interface between the gesture recognition system and an Arduino board to control the robotic hand.
+                            <br>
+
+                        </p>
+                    </div>
+
+                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Decision Details</h2>
+                        <p>
+                            I was able to use a repository already integrated MediaPipe which was open source. 
+                            A solid chunk of time was spent in understanding the functionality of the neural network and 
+                            how I could use the recognized hand gestures and send signals to the microcontroller. Then came 
+                            the design choices to create a hand from scratch that could mimic the gestures accurately. I decided 
+                            to build individual fingers that were held straight through an elastic string, and bent using normal string. 
+                            The tension from the elastic string would restraighten the finer after the servo returned to its original position. 
+                            For this first iteration, I decided to go with the Arduino Uno R3 simply for its extensive community and female header pins 
+                            for ease of attachment.
+                        </p>
+                    </div>
+                    
+
+
+                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Problems Along The Way</h2>
+                        <p>
+                            The largest issue was improving finger bending from the 180 degree servo rotation, and a better use of the elastic tension 
+                            so the finger would straighten properly every time. Furthermore, I also needed to reduce the friction from the joints, and 
+                            prevent the strings getting stuck between the joints. The servos I was using also were jittering a lot initially and I discovered 
+                            that there wasn't sufficient power provided for the servos and Arduino. I had to then supplement the servos with additional batteries.
+                        </p>
+                    </div>
+
+
+                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
+
+                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Hand</h2>
+
+                        <p style = "Helvetica Now Pro Display ExtraBold;">Below is a clip of the hand while working compared to the gestures 
+                            made by my hand. You can click 
+                            <a href="Hand Gesture Project.zip" download="Hand Gesture Project.zip">here</a> to download all the necessary files.
+                        </p>
+                        </div>
+                        <div class="electric-atv-column" style="width: 400px;">
+                        <p style = "Helvetica Now Pro Display ExtraBold;" >  </p>
+            
+                        </div>
+                        <div class="video" style="margin-left: 35%; height: 70%; width: 70%;">
+                            <video width="100%" controls>
+                                <source src="handvideo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>           
+
+                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%; padding-bottom: 10%;">
+
+                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Future Additions</h2>
+                        <p>
+                            I plan on working on the rest of the hand as well so it is not static, and moves as a palm would. I also want to improve 
+                            the finger rotation by changing the current assembly. Also, you may have noticed the FPS significantly drops as my hand enters 
+                            the view (it is very brief, but drops from 30 FPS to under 3). This is due to the way I setup the arduino communication with the 
+                            neural network and another thing I plan on improving on. Lastly, I want to make the entire system independent of connection by 
+                            using an ESP-32 with Camera capabilites, as that microcontroller also has wifi and bluetooth capabilites.
+                        </p>
+                    </div>
+                    
             </div>
+
+
         </header>
+
+        
 
     </div>
 

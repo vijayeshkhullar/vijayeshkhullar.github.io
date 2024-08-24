@@ -310,7 +310,7 @@ header p {
       left: -200px; /* Starting off-screen */
   }
   100% {
-      left: calc(100% - 1200px); /* Adjust this value to stop at the desired point */
+      left: calc(100% - 1300px); /* Adjust this value to stop at the desired point */
   }
 }
 
@@ -349,10 +349,12 @@ header p {
   margin-top: 200px;
   height: 450px;
   width: 600px;
+  z-index: 1; /* Ensure the carousel stays below the header */
+
 }
 
 .carousel-caption.custom-caption {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   left: 10px;
   right: auto;
@@ -407,6 +409,117 @@ body.slid-up {
   overflow: auto; /* Enable scrolling after slide-up */
 }
 
+
+/*FOR THE ATV SECTION*/
+#overlayScreen {
+  position: fixed;
+  top: 0;
+  left: 100%; /* Initially off-screen to the right */
+  width: 100%;
+  height: 100%;
+  background-color: #042244; /* Set the background color */
+  overflow-y: auto;
+  z-index: 1000;
+  transition: left 0.7s ease-in-out; /* Slide-in/out transition */
+}
+
+/* Light and dark mode styles for the overlay screens */
+#overlayScreen.dark-mode {
+  background-color: #042244; /* Dark mode background color */
+  color: #D6CACA;
+}
+
+#overlayScreen.light-mode {
+  background-color: #D6CACA; /* Light mode background color */
+  color: #000000;
+}
+
+#overlayScreen2.dark-mode {
+  background-color: #042244; /* Dark mode background color */
+  color: #D6CACA;
+}
+
+#overlayScreen2.light-mode {
+  background-color: #D6CACA; /* Light mode background color */
+  color: #000000;
+}
+
+
+
+#overlayScreen.visible {
+  left: 0; /* Slide the screen into view */
+}
+
+#overlayScreen.hidden {
+  left: 100%; /* Slide the screen out of view */
+}
+
+#overlayScreen .header {
+  position: sticky;
+  top: 0;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-start; /* Aligns the content to the left */
+  z-index: 1000; /* Ensure the header is above other content */
+
+}
+
+#overlayScreen .header button {
+  margin-left: 0; /* Ensures the button starts at the left edge */
+}
+
+#overlayScreen .content {
+  padding: 20px;
+  color: white; /* Make the text color white for contrast */
+}
+
+/*FOR THE ATV SECTION*/
+#overlayScreen2 {
+  position: fixed;
+  top: 0;
+  left: 100%; /* Initially off-screen to the right */
+  width: 100%;
+  height: 100%;
+  background-color: #042244; /* Set the background color */
+  overflow-y: auto;
+  z-index: 1000;
+  transition: left 0.7s ease-in-out; /* Slide-in/out transition */
+}
+
+#overlayScreen2.visible {
+  left: 0; /* Slide the screen into view */
+}
+
+#overlayScreen2.hidden {
+  left: 100%; /* Slide the screen out of view */
+}
+
+#overlayScreen2 .header {
+  position: sticky;
+  top: 0;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-start; /* Aligns the content to the left */
+  z-index: 1000; /* Ensure the header is above other content */
+
+}
+
+#overlayScreen2 .header button {
+  margin-left: 0; /* Ensures the button starts at the left edge */
+}
+
+#overlayScreen2 .content {
+  padding: 20px;
+  color: white; /* Make the text color white for contrast */
+}
+
+
+
+/*Start screen enter button*/
 .enter-btn {
   margin-top: 20px;
   padding: 10px 20px;
@@ -416,4 +529,29 @@ body.slid-up {
   cursor: pointer;
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.openOverlayBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+/* Container for text and image */
+.content-wrapper {
+  display: flex;
+  justify-content: space-between; /* Adjust spacing between text and image */
+  align-items: flex-start; /* Align items to the top of the container */
+}
+
+/* Style for text content */
+.text-content {
+  flex: 1; /* Allows text content to take available space */
+  padding-right: 20px; /* Adds space between text and image */
 }

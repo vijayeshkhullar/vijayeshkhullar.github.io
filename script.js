@@ -2,22 +2,32 @@ document.getElementById('toggle-theme').addEventListener('click', function() {
   const body = document.body;
   const themeIcon = document.getElementById('theme-icon');
   const circle = document.querySelector('.circle');
+  const overlays = document.querySelectorAll('#overlayScreen, #overlayScreen2'); // Select all overlay screens
 
   // Toggle between dark and light modes
   if (body.classList.contains('dark-mode')) {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      themeIcon.src = 'lightmodelogo.png';
-      circle.classList.remove('dark-mode');
-      circle.classList.add('light-mode');
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    themeIcon.src = 'lightmodelogo.png';
+    circle.classList.remove('dark-mode');
+    circle.classList.add('light-mode');
+
+    // Apply light mode to all overlay screens
+    overlays.forEach(overlay => overlay.classList.remove('dark-mode'));
+    overlays.forEach(overlay => overlay.classList.add('light-mode'));
   } else {
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      themeIcon.src = 'darkmode.png';
-      circle.classList.remove('light-mode');
-      circle.classList.add('dark-mode');
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    themeIcon.src = 'darkmode.png';
+    circle.classList.remove('light-mode');
+    circle.classList.add('dark-mode');
+
+    // Apply dark mode to all overlay screens
+    overlays.forEach(overlay => overlay.classList.add('dark-mode'));
+    overlays.forEach(overlay => overlay.classList.remove('light-mode'));
   }
 });
+
 
 
 // Animation for stuff later in page
@@ -94,3 +104,32 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.add("slid-up");
   });
 });
+
+document.getElementById('openOverlayBtn').addEventListener('click', function() {
+  document.getElementById('overlayScreen').classList.remove('hidden');
+  document.getElementById('overlayScreen').classList.add('visible');
+  document.getElementById('mainContent').style.display = 'none';
+  document.body.style.overflow = 'hidden';  // Disable body scroll
+});
+
+document.getElementById('backBtn').addEventListener('click', function() {
+  document.getElementById('overlayScreen').classList.remove('visible');
+  document.getElementById('overlayScreen').classList.add('hidden');
+  document.getElementById('mainContent').style.display = 'block';
+  document.body.style.overflow = 'auto';  // Re-enable body scroll
+});
+
+document.getElementById('openOverlayBtn2').addEventListener('click', function() {
+  document.getElementById('overlayScreen2').classList.remove('hidden');
+  document.getElementById('overlayScreen2').classList.add('visible');
+  document.getElementById('mainContent').style.display = 'none';
+  document.body.style.overflow = 'hidden';  // Disable body scroll
+});
+
+document.getElementById('backBtn2').addEventListener('click', function() {
+  document.getElementById('overlayScreen2').classList.remove('visible');
+  document.getElementById('overlayScreen2').classList.add('hidden');
+  document.getElementById('mainContent').style.display = 'block';
+  document.body.style.overflow = 'auto';  // Re-enable body scroll
+});
+
