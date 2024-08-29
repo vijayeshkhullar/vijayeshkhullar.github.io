@@ -454,17 +454,29 @@ body.slid-up {
   left: 100%; /* Slide the screen out of view */
 }
 
+#overlayScreen {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #overlayScreen .header {
   position: sticky;
   top: 0;
+  width: 100vw; /* Use viewport width to ensure it spans the screen */
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 20px;
   border-bottom: 1px solid #ccc;
   display: flex;
-  justify-content: flex-start; /* Aligns the content to the left */
-  z-index: 1000; /* Ensure the header is above other content */
-
+  justify-content: flex-start;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
 }
+
+
+
 
 #overlayScreen .header button {
   margin-left: 0; /* Ensures the button starts at the left edge */
