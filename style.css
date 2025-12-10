@@ -1,569 +1,367 @@
-@font-face {
-    font-family: 'Helvetica Now Pro Display';
-    src: url('HelveticaNowProDisplay-ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-style: normal;
+/* reset-ish */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 body {
-    margin: 0;
-    font-family: 'Helvetica Now Pro Display', Arial, sans-serif;
-    background-color: #121212;
-    color: #D6CACA;
-
+    background: #2b2b3d;
+    color: #f5f5f5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    line-height: 1.6;
 }
 
+/* navbar */
 
-
-body.dark-mode {
-  background-color: #010d1b;
-  color: #D6CACA;
-}
-
-body.light-mode {
-  background-color: #D6CACA;
-  color: #000000;
-}
-
-
-/*Navbar*/
 nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 1em 2em;
-    background-color: #000000;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
 }
 
-nav ul {
+.nav-logo {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-links {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #2e2e2e;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    display: inline-block;
-    transition: transform 0.2s, background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #4e4e4e;
-    transform: scale(1.1);
-}
-
-nav ul li a:active {
-    transform: scale(0.95);
-}
-
-button#toggle-theme {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5em;
-    border-radius: 5px;
-    transition: transform 0.2s, background-color 0.3s;
-    margin-left: 1em;
-}
-
-button#toggle-theme img {
-    width: 20px;
-    height: 20px;
-}
-
-button#toggle-theme:hover {
-    background-color: #4e4e4e;
-    transform: scale(1.1);
-}
-
-button#toggle-theme:active {
-    transform: scale(0.95);
-}
-
-
-/*Headers and texts*/
-header {
-    text-wrap: wrap;
-    text-align: right;
-    padding: 10%;
-    width: 80%;
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-    font-weight: 800; /* Use ExtraBold font */
-}
-
-p{
-  font-size: 2.5em;
-  margin-bottom: 0em;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-  font-weight: 800; /* Use ExtraBold font */
-}
-
-header p {
-    font-size: 1.2em;
-    margin-bottom: 5em;
-}
-
-/*Columns of text*/
-  .column {
-    width: 1125px; 
-    text-align: left; 
-    padding-left: 60%; 
-  }
-
-  .about-column {
-    width: 800px;
-    text-align: left;
-    padding-left: 30%;
-}
-.electric-atv-column{
-  text-align: left;
-  width: 500px;
-}
-
-.hand-column{
-  text-align: left;
-  width: 1000px;
-  padding-left: 15%
-}
-
-
-/*Containers*/
-.container-md{
-    display: flex;
-}
-  
-  .container-sm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-  
-  .center{
-    text-align: center;
-}
-  
-
-/*Shapes*/
-  .circle {
-    position: absolute;
-    bottom: 35%;
-    left: 15%;
-    width: 10vw;
-    height: 10vw;
-    background-color: #D6CACA;
-    border-radius: 50%;
-}
-
-
-
-
-  .semicircle{
-    width: 35vw; 
-    height: 10vw; 
-    border-radius: 0 0 15vw 15vw; 
-    overflow: hidden;
-    position: absolute;
-    top: 100%;
-    left: 4.9%;
-    background-color: #00252e;
-  }
-  
-  .circle.dark-mode {
-    background-color: #D6CACA; 
-  }
-  .circle.light-mode {
-    background-color: #f39c12;
-}
-  body.dark-mode .circle {
-    background-color: #D6CACA;
-  }
-  
-  .triangle-red {
-    position: absolute;
-    bottom: 0;
-    left: 4.9%;
-    width: 0;
-    height: 0;
-    border-left: 15vw solid transparent;
-    border-right: 15vw solid transparent;
-    border-bottom: 20vw solid #e74c3c;
-  }
-  
-  .triangle-navy {
-    position: absolute;
-    bottom: 0;
-    left: 15%;
-    width: 0;
-    height: 0;
-    border-left: 5vw solid transparent;
-    border-right: 20vw solid transparent;
-    border-bottom: 20vw solid #2c3e50;
-  }
-
-
-  /*Text Highlight*/
-  .highlight{
-    color: #e74c3c;
-  }
-
-
-/*Transition off screen*/
-  .circle, .triangle-red, .triangle-navy {
-    transition: transform 1s ease-out;
-}
-
-.hide {
-    transform: translateX(-400%); 
-}
-
-
-  @media (max-width: 768px) {
-    .circle, .triangle-red, .triangle-navy {
-      display: none; 
-    }
-  }
-  
-  .rectangles-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
 }
 
-.rectangle {
-    background-color: #278d88;
-    border-radius: 15px;
-    padding: 20px;
-    width: 300px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.rectangle a {
-    color: inherit; 
+.nav-links a {
+    color: #ccc;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    font-size: 0.95rem;
+    transition: color 0.2s;
 }
 
-.rectangle img {
-    height: 50px;
-    width: 50px;
-    margin-right: 20px;
+.nav-links a:hover {
+    color: #fff;
 }
 
-.rectangle .content {
+/* hero */
+
+.hero {
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    padding-top: 80px; /* space for navbar */
 }
 
-.rectangle .content .date {
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 5px;
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
 }
 
-.rectangle .content .title {
-    font-size: 18px;
+/* sections */
+
+.section {
+    padding: 120px 40px;
 }
 
-.rectangle:hover {
-    background-color: #6d198f;
-    transform: scale(1.05);
+section + section {
+    margin-top: 80px;
 }
+
+.section h2,
+.section-subtitle {
+    margin-bottom: 35px;
+}
+
+
+/* about text */
+
+#about p {
+    max-width: 750px;
+    font-size: 1.05rem;
+}
+
+/* engineering grid */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+
+.card {
+    background: #1a1a1c;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.card:hover {
+    background: #242427;
+    transform: translateY(-4px);
+}
+
+/* galleries */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+/* footer */
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* slide-in project panel */
+
+#project-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 700px;
+    max-width: 100%;
+    height: 100%;
+    background: #000;
+    padding: 40px 32px;
+    box-shadow: -6px 0 24px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    transition: right 0.35s ease;
+    overflow-y: auto;
+}
+
+#project-panel.open {
+    right: 0;
+}
+
+#panel-close {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+#project-content h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+#project-content p {
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 18px 0;
+    cursor: zoom-in;
+}
+
+.code-block {
+    background: #1e1e1e;
+    padding: 14px;
+    border-radius: 8px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    font-size: 0.85rem;
+    margin: 16px 0;
+}
+
+/* lightbox */
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 3000;
+}
+
+#lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.7);
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 32px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* responsive */
 
 @media (max-width: 768px) {
-    .rectangles-container {
-        flex-direction: column;
+    .hero {
+        height: 55vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+
+    #project-panel {
+        width: 100%;
     }
 }
 
+/* ABOUT SECTION WITH PHOTO */
 
-/*Animations*/
-@keyframes drive {
-  0% {
-      left: -200px; /* Starting off-screen */
-  }
-  100% {
-      left: calc(100% - 1300px); /* Adjust this value to stop at the desired point */
-  }
+.about-section {
+    padding-top: 200px;
+    margin-top: 300px;
 }
 
-.car {
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-photo {
+    width: 260px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* responsive: stack photo & text on small screens */
+@media (max-width: 750px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-photo {
+        width: 200px;
+        height: 200px;
+    }
+}
+.about-section {
+    margin-top: 180px !important;
+}
+.project-video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 18px 0;
+    display: block;
+    object-fit: cover;
+}
+/* prism.js code styling */
+pre {
+    background: #1e1e1e;
+    padding: 16px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+code {
+    font-size: 0.9rem;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.download-btn {
     position: absolute;
-    left: -200px; /* Start off-screen */
-    padding-bottom: 0%;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.55);
+    padding: 6px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.car.in-view{
-  animation: drive 1s linear forwards; /* Animation runs once and stops at the end */
+.image-wrapper:hover .download-btn {
+    opacity: 1;
 }
 
-.van{
-  position: absolute;
-  left: -200px; /* Start off-screen */
-  padding-bottom: 20%;
-
+.download-btn:hover {
+    background: rgba(0,0,0,0.8);
 }
 
-.van.in-view{
-  animation: drive 2s linear forwards; /* Animation runs once and stops at the end */
+.download-icon {
+    width: 22px;
+    height: 22px;
+    color: white;
 }
 
-
-
-.game-controls{
-  margin-left: 20%;
-  text-align: center;
-  padding-bottom: 20px;
-  width: 50%;
-}
-
-.carousel{
-  margin-left: 200px;
-  margin-top: 200px;
-  height: 450px;
-  width: 600px;
-  z-index: 1; /* Ensure the carousel stays below the header */
-
-}
-
-.carousel-caption.custom-caption {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  right: auto;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: left;
-}
-
-/* Scroll Button*/
-#scrollButton {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background-color: #ffffff;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-
-  width: 3vw;
-  height: 3vw;
-  border-radius: 50%;
-}
-
-.start-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #0A0A0A;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 1s ease-in-out;
-  z-index: 10;
-}
-
-body.slid-up .start-screen {
-  transform: translateY(-100%); /* Slide the start screen up */
-}
-
-
-
-body.start-screen-active {
-  overflow: hidden; /* Prevent scrolling while start screen is visible */
-}
-
-body.slid-up {
-  overflow: auto; /* Enable scrolling after slide-up */
-}
-
-
-/*FOR THE ATV SECTION*/
-#overlayScreen {
-  position: fixed;
-  top: 0;
-  left: 100%; /* Initially off-screen to the right */
-  width: 100%;
-  height: 100%;
-  background-color: #042244; /* Set the background color */
-  overflow-y: auto;
-  z-index: 1000;
-  transition: left 0.7s ease-in-out; /* Slide-in/out transition */
-}
-
-/* Light and dark mode styles for the overlay screens */
-#overlayScreen.dark-mode {
-  background-color: #042244; /* Dark mode background color */
-  color: #D6CACA;
-}
-
-#overlayScreen.light-mode {
-  background-color: #D6CACA; /* Light mode background color */
-  color: #000000;
-}
-
-#overlayScreen2.dark-mode {
-  background-color: #042244; /* Dark mode background color */
-  color: #D6CACA;
-}
-
-#overlayScreen2.light-mode {
-  background-color: #D6CACA; /* Light mode background color */
-  color: #000000;
-}
-
-
-
-#overlayScreen.visible {
-  left: 0; /* Slide the screen into view */
-}
-
-#overlayScreen.hidden {
-  left: 100%; /* Slide the screen out of view */
-}
-
-#overlayScreen {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#overlayScreen .header {
-  position: sticky;
-  top: 0;
-  width: 100vw; /* Use viewport width to ensure it spans the screen */
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: flex-start;
-  z-index: 1000;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-}
-
-
-
-
-#overlayScreen .header button {
-  margin-left: 0; /* Ensures the button starts at the left edge */
-}
-
-#overlayScreen .content {
-  padding: 20px;
-  color: white; /* Make the text color white for contrast */
-}
-
-/*FOR THE ATV SECTION*/
-#overlayScreen2 {
-  position: fixed;
-  top: 0;
-  left: 100%; /* Initially off-screen to the right */
-  width: 100%;
-  height: 100%;
-  background-color: #042244; /* Set the background color */
-  overflow-y: auto;
-  z-index: 1000;
-  transition: left 0.7s ease-in-out; /* Slide-in/out transition */
-}
-
-#overlayScreen2.visible {
-  left: 0; /* Slide the screen into view */
-}
-
-#overlayScreen2.hidden {
-  left: 100%; /* Slide the screen out of view */
-}
-
-#overlayScreen2 .header {
-  position: sticky;
-  top: 0;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: flex-start; /* Aligns the content to the left */
-  z-index: 1000; /* Ensure the header is above other content */
-
-}
-
-#overlayScreen2 .header button {
-  margin-left: 0; /* Ensures the button starts at the left edge */
-}
-
-#overlayScreen2 .content {
-  padding: 20px;
-  color: white; /* Make the text color white for contrast */
-}
-
-
-
-/*Start screen enter button*/
-.enter-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #FFFFFF;
-  color: #000000;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.openOverlayBtn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #FFFFFF;
-  color: #000000;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  font-weight: bold;
-  transform: translate(-50%, -50%);
-}
-
-/* Container for text and image */
-.content-wrapper {
-  display: flex;
-  justify-content: space-between; /* Adjust spacing between text and image */
-  align-items: flex-start; /* Align items to the top of the container */
-}
-
-/* Style for text content */
-.text-content {
-  flex: 1; /* Allows text content to take available space */
-  padding-right: 20px; /* Adds space between text and image */
+.download-btn {
+    border-radius: 50%;
+    padding: 8px;
 }

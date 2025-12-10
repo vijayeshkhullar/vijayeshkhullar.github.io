@@ -1,605 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vijayesh | portfolio</title>
+    <link rel="stylesheet" href="style.css" />
 
-    <head>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="./style.css" rel="stylesheet">
-
-        <!-- JavaScript -->
-        <!-- JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-        crossorigin="anonymous"></script>
-
-        <script src="script.js"> myFunction()</script>
-    </head>
-
-    <body class="dark-mode">
-        <div class="start-screen">
-            <div class="start-text">
-                <h1>WELCOME TO MY DIGITAL HUB.</h1>
-                <p>"I have no special talents. I am only passionately curious."</p>
-                <button class="enter-btn">Enter</button>
-            </div>
-        </div>
-        
-        <nav>
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about-me">About</a></li>
-                <li><a href="https://github.com/vijayeshkhullar"  target="_blank">GitHub</a></li>
-            </ul>
-            <button id="toggle-theme">
-                <img src="darkmode.png" alt="Toggle Theme" id="theme-icon">
-                    <script src="script.js"></script>
-
-            </button>
-        </nav>
+    <!-- Prism.js syntax highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-verilog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+</head>
+<body>
 
 
-        <header>
-            <h1 style = "Helvetica Now Pro Display ExtraBold; margin-right: 85px;" >Hey, I'm <span class="highlight">Vijayesh</span></h1>
-            
-            <div class="column">
-            <p style = "Helvetica Now Pro Display ExtraBold;">I'm an Engineering student working on some projects 
-                involving code, 3D design, and more. I am interested in digital processing, energy systems and implementation 
-                of machine learning. Welcome to my digital hub!</p>
+    <!-- navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">vijayesh</div>
+        <ul class="nav-links">
+            <li><a href="#about">about</a></li>
+            <li><a href="#engineering">engineering</a></li>
+            <li><a href="#astro">astrophotography</a></li>
+            <li><a href="#adventure">adventures</a></li>
+        </ul>
+    </nav>
 
-            </div>
-        </header>
-        
-        
-        <script src="script.js"></script>
-
-         <!-- main content -->
-    <div class="container-md  " id="mountain">
-                <div class="circle"></div>
-                <div class="triangle-red"></div>
-                <div class="triangle-navy"></div>
-                
-    </div>
-
-    <div class="container-md vh-100 pt-5  " id="projects">
-        <div class="container-sm">
-        <div>
-            <h1 style = "Helvetica Now Pro Display ExtraBold;" >Projects</h1>
-                
-        </div>
-            <!-- Project Rectangles-->
-            <div class="rectangles-container">
-                <div class="rectangle">
-                    <a href="#electric-atv">
-                        <img src="car.png" alt="Electric ATV Logo" style="height: 70px; width: 70px;" />
-                        <div class="content">
-                            <div class="date">June 14, 2024</div>
-                            <div class="title">Electric ATV</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="rectangle">
-                    <a href="#hand-gesture">
-                        <img src="handlogo.png" alt="Puppet Logo" />
-                        <div class="content">
-                            <div class="date">June 14, 2024</div>
-                            <div class="title">Hand Puppet</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="rectangle">
-                    <a href="#van-helsing">
-                        <img src="vanhelsing.png" alt="Van Helsing Logo" style="height: 30px; width: 25px;" />
-                        <div class="content">
-                            <div class="date">July 18, 2023</div>
-                            <div class="title">Van Helsing</div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Second Row-->
-            <div class="rectangles-container" style="margin-top: 5%;">
-                <div class="rectangle">
-                    <a href="#Mini-Game-PCB">
-                        <img src="circuitlogo.png" alt="Project Four Logo" style="height: 30px; width: 60px;" />
-                        <div class="content">
-                            <div class="date">July 10, 2024</div>
-                            <div class="title">Mini Game PCB</div>
-                        </div>
-                    </a>
-                </div>
-                <!--
-                <div class="rectangle">
-                    <a href="#project-five">
-                        <img src="project5.png" alt="Project Five Logo" />
-                        <div class="content">
-                            <div class="date">September 20, 2024</div>
-                            <div class="title">Project Five</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="rectangle">
-                    <a href="#project-six">
-                        <img src="project6.png" alt="Project Six Logo" style="height: 30px; width: 25px;" />
-                        <div class="content">
-                            <div class="date">October 15, 2024</div>
-                            <div class="title">Project Six</div>
-                        </div>
-                    </a>
-                </div>-->
-
-            </div>
-
-        </div>
-    </div>
-
-
-
-    <!-- About Me Section-->
-    <div class="container-md vh-100 pt-5" id="about-me">
-        <header>
-            <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-right: 13%;" >About Me</h1>
-            
-            <div class="about-column">
-            <p style = "Helvetica Now Pro Display ExtraBold;">I am currently an Engineering Student at the University of British Columbia! The goal of this 
-            website is to share my progress as an engineer while I work on various projects throughout the years.</p>
-
-            </div>
-            <!--<div class="circle-two"><img src="me.png" style="height: 300px; width: 330px; margin-right: 125px;"></div>-->
-
-        </header>
-
-    </div>
-
-
-<!-- Electric ATV Section -->
-<div class="container-md vh-100 pt-5" id="electric-atv">
-    <div>
-        <img src="car.png" style="height: 200px; width: 225px; margin-top: 13%;" id="car" alt="Car Animation" class="car animate">
-        <script src="script.js"></script>
-    </div>
-    <header>
-        <div class="row">
-            <div class="col-md-6" style="margin-top: 25%;">
-                
-
-                <div class="electric-atv-column" >
-                    <h2 style="font-weight: bold; color: rgb(48, 200, 154)">Electric ATV</h2>
-
-                    <p style="Helvetica Now Pro Display ExtraBold;">
-                    This project involves the conversion of a traditional 110CC gasoline-powered ATV into a fully electric vehicle. 
-                    The transformation leverages modern electric vehicle (EV) technology, including a custom-built 48V battery and 
-                    an electric motor, to create an eco-friendly and efficient mode of transportation. The project showcases the 
-                    integration of new technologies with existing mechanical systems, demonstrating a hands-on approach to 
-                    innovation and sustainability.
-
-                    </p>
-
-                </div>
-                <div id="mainContent">
-                    <button class="openOverlayBtn" id="openOverlayBtn">Read More</button>
-                  </div>
-
-                
-            </div>
-
-            <div class="col-md-6">
-            <img src="myatvfull.png" style="height: 400px; width: 450px; margin-top: 50%; margin-left: 50%;" id="myatv" alt="My ATV">
-            </div>
-
-
-            <div id="overlayScreen" class="hidden">
-                    <div class="header">
-                        <button id="backBtn">← Back</button>
-                    </div>
-                   <div class="container-md vh-100 pt-5" id="electric-atv">
-                    <header>
-                        <h1 style="Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 30%;">Electric ATV</h1>
-
-                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Overview</h2>
-                            <p>The primary goal of this project is to explore the feasibility and benefits of converting a small 
-                                off-road vehicle to electric power. By replacing the internal combustion engine with an electric 
-                                motor and battery system, the project aims to reduce emissions, improve energy efficiency, and 
-                                enhance the vehicle’s performance. Additionally, the project serves as a learning experience, 
-                                allowing for the development of skills in areas such as battery construction, electrical system 
-                                integration, and mechanical design.
-
-                                This project is a step towards understanding the intricacies of electric vehicles, contributing 
-                                to the growing field of sustainable transportation. Through this conversion, the project also 
-                                aims to inspire others to explore similar innovations in their own vehicles or machines.
-                                
-                                </p>
-                        </div>
-
-                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Objectives</h2>
-                            <p>
-                                In the full conversion, there are three main goals: 
-                                <br>
-                                <br>    • Building the Battery
-                                <br>    • Adding the Electric Motor
-                                <br>    • Modifying the current system to add motor braking and reversing
-                                <br>
-                                <br> With the completion of these goals, the ATV will run solely on electric power.
-                            </p>
-                        </div>
-
-                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Part Selection</h2>
-                            <p>
-                                While selecting the necessary components, I had to consider several key factors such as 
-                                weight of the rider and ATV itself, the speed and torque required from the motor, the battery and 
-                                BMS that would sufficiently power the motor and implementation of the other functionalities. 
-                                For the motor, I ended up choosing the Vevor motor which was a fairly cost effective (under $160) and with 
-                                decent power 1800 rpm. Furthermore, the motor comes with its own speed controller which is incredibly useful
-                                in moderating power and various functions for the motor. For the battery, I chose standard 18650 cells, in a 
-                                13 series and 7 parallel configuration since they are commonly used for building battery packs. Additionally, I chose 
-                                a rather high tolerance Battery Managment System (BMS), with max amperage at 50A, a lot higher than the 33A required for 
-                                the motor. The ATV frame chosen was a cheap 110cc ATV that was being discarded and sold for parts, but luckily came with the 
-                                frame, steering and axles intact.
-                            </p>
-                        </div>
-                        
-
-                        <div class="row">
-                            <div class="col-md-6" style="margin-top: 25%;">
-                                
-
-                                <div class="electric-atv-column" >
-                                    <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Battery</h2>
-  
-                                    <p style="Helvetica Now Pro Display ExtraBold;">
-                                        The pictures show my 48.1V battery built with 18650 cells in a 7 parallel, 13 series configuration. 
-                                        It should run for 24 minutes at full throttle, pending tests. The red wires on the top left are for 
-                                        power and charging, and the bottom right wire is ground. I designed and 3D printed the brackets. The 
-                                        BMS regulates current, prevents overcharging, and handles up to 50 amps, while my motor controller 
-                                        uses 33 amps. The side view shows wire connections through a ribbon cable to the BMS, alternating 
-                                        through all positive terminals and connecting to the negative terminal. The connections were formed 
-                                        using nickel strips and a spot welder.
-                
-                                    </p>
-                                </div>
-                                
-            
-                                
-                            </div>
-                
-                            <div class="col-md-6">
-                                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                                    <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-                                        <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
-                                        <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
-                
-                                    </ol>
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="batwhole.png" alt="whole" style="width:100%;">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="batside.png" alt="side" style="width:100%;">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="batbot.png" alt="bottom" style="width:100%;">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="battop.png" alt="top" style="width:100%;">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="bms.png" alt="bms" style="height: 80% ;width:90%; padding-right: 120px">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Left and right controls -->
-                                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only"></span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Problems Along The Way</h2>
-                            <p>
-                                The conversion was easier said than done, with quite a few issues along the way. First was a 
-                                charger with lower capacity than the battery, with a max charge at 42V compared to the max charge for my 
-                                battery at 54.6V. Therefore, the testing for the motor was done using nominal voltages at around 48V. 
-                                Second, and a major issue, was fitting a new sprocket on the motor to fit the chain of the old rear axle assembly.
-                                I was not able to find a pre-made part, which meant designing and getting the piece custome made. Then an issue with 
-                                mounting the motor, as it was vastly different from the original engine, and a temporary wooden mount showed to be too brittle.
-                            </p>
-                        </div>
-
-
-                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The ATV</h2>
-                            <p>
-                                This is the picture of the current ATV that still needs some modifications.
-                            </p>
-                            <img src="myatv.png" style="height: 400px; width: 450px; margin-bottom: 20px; margin-left: 35%;" id="myatv" alt="My ATV">
-
-                        </div>
-
-                        <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%; padding-bottom: 10%;">
-
-                            <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Future Additions</h2>
-                            <p>
-                                I plan on using the speed controller to add in reverse and motor braking onto the ATV through a control panel. 
-                                Using a microcontroller, I also plan on adding a GPS and Speedometer independetly from current systems such as Google 
-                                Maps.
-                            </p>
-                        </div>
-
-
-
-                    </header>
-
-                </div>
-
-
-                </div>
-            
-        </div>
-
-
-
-
+    <!-- hero -->
+    <header class="hero">
+        <h1>engineering • photography • adventure</h1>
+        <p>portfolio of projects, astrophotography, and outdoor stories.</p>
     </header>
-</div>
 
-
-    </header>
-</div>
-
-
-
-    <!-- Hand gesture -->
-    <div class="container-md vh-100 pt-5" style="margin-top: 400px;" id="hand-gesture">
-        
-        <header>
-            <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 170px;" >Hand Gesture Puppet</h1>
+    <!-- about me (under hero) -->
+    <section id="about" class="section about-section">
+        <div class="about-container">
+            <img src="images/me.jpg" alt="vijayesh portrait" class="about-photo" />
             
-            <div class="hand-column" style="">
-            <p style = "Helvetica Now Pro Display ExtraBold;">This project showcases a sophisticated integration of MediaPipe, 
-                computer vision, and robotics to create an interactive system that translates hand gestures into physical actions. 
-                By employing a custom-designed 3D-printed robotic hand and interfacing it with an Arduino board, the system enables 
-                real-time gesture mimicry, offering a novel approach to human-computer interaction.
-
-            </p>
+            <div class="about-text">
+                <h2>about me</h2>
+                <p>
+                    i am an engineering student and amateur photographer and this is my blog of exploration. i work on digital design, embedded systems, 
+                    shooting the night sky, and documenting my hikes, <!--scuba dives,-->skydives, and travels.
+                </p>
             </div>
-
-            <!--OVERLAYSCREEN-->
-            <div id="mainContent">
-                <button class="openOverlayBtn" id="openOverlayBtn2">Read More</button>
-            </div>
-        
-            <div id="overlayScreen2" class="hidden">
-                <div class="header">
-                    <button id="backBtn2">← Back</button>
-                </div>
-                <header>
-                    <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 170px;" >Hand Gesture Puppet</h1>
-                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Overview</h2>
-                        <p>
-                            This project integrates MediaPipe and computer vision technologies to recognize 
-                            hand gestures and translate them into physical movements using a 3D-printed robotic hand. 
-                            By leveraging gesture recognition to interface with an Arduino board, the project aims 
-                            to create an interactive and responsive robotic hand that mimics human gestures.
-                        </p>
-                    </div>
-
-                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Objectives</h2>
-                        <p>
-                            The goal was to understand the workings of the neural network to not only train different gestures, 
-                            but be able to incorporate arduino communication with a microcontroller. The two main goals were:
-                            <br>
-                            <br>    • Robotic Hand Design: Design and 3D-print a robotic hand capable of replicating various gestures.
-                            <br>    • Arduino Integration: Develop an interface between the gesture recognition system and an Arduino board to control the robotic hand.
-                            <br>
-
-                        </p>
-                    </div>
-
-                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Decision Details</h2>
-                        <p>
-                            I was able to use a repository already integrated MediaPipe which was open source. 
-                            A solid chunk of time was spent in understanding the functionality of the neural network and 
-                            how I could use the recognized hand gestures and send signals to the microcontroller. Then came 
-                            the design choices to create a hand from scratch that could mimic the gestures accurately. I decided 
-                            to build individual fingers that were held straight through an elastic string, and bent using normal string. 
-                            The tension from the elastic string would restraighten the finer after the servo returned to its original position. 
-                            For this first iteration, I decided to go with the Arduino Uno R3 simply for its extensive community and female header pins 
-                            for ease of attachment.
-                        </p>
-                    </div>
-                    
-
-
-                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Problems Along The Way</h2>
-                        <p>
-                            The largest issue was improving finger bending from the 180 degree servo rotation, and a better use of the elastic tension 
-                            so the finger would straighten properly every time. Furthermore, I also needed to reduce the friction from the joints, and 
-                            prevent the strings getting stuck between the joints. The servos I was using also were jittering a lot initially and I discovered 
-                            that there wasn't sufficient power provided for the servos and Arduino. I had to then supplement the servos with additional batteries.
-                        </p>
-                    </div>
-
-
-                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%;">
-
-                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">The Hand</h2>
-
-                        <p style = "Helvetica Now Pro Display ExtraBold;">Below is a clip of the hand while working compared to the gestures 
-                            made by my hand. You can click 
-                            <a href="Hand Gesture Project.zip" download="Hand Gesture Project.zip">here</a> to download all the necessary files.
-                        </p>
-                        </div>
-                        <div class="electric-atv-column" style="width: 400px;">
-                        <p style = "Helvetica Now Pro Display ExtraBold;" >  </p>
-            
-                        </div>
-                        <div class="video" style="margin-left: 35%; height: 70%; width: 70%;">
-                            <video width="100%" controls>
-                                <source src="handvideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>           
-
-                    <div style="text-align: justify; margin-left: 15%; width: 100%; margin-top: 5%; padding-bottom: 10%;">
-
-                        <h2 style="font-weight: bold; color: rgb(179, 207, 254)">Future Additions</h2>
-                        <p>
-                            I plan on working on the rest of the hand as well so it is not static, and moves as a palm would. I also want to improve 
-                            the finger rotation by changing the current assembly. Also, you may have noticed the FPS significantly drops as my hand enters 
-                            the view (it is very brief, but drops from 30 FPS to under 3). This is due to the way I setup the arduino communication with the 
-                            neural network and another thing I plan on improving on. Lastly, I want to make the entire system independent of connection by 
-                            using an ESP-32 with Camera capabilites, as that microcontroller also has wifi and bluetooth capabilites.
-                        </p>
-                    </div>
-                    
-            </div>
-
-
-        </header>
-
-        
-
-    </div>
-
-    <!-- Mini Game PCB -->
-    <div class="container-md vh-100 pt-5" style="margin-top: 400px;" id="Mini-Game-PCB">
-        
-        <header>
-            <h1 style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: center; margin-left: 170px;" >Mini Game PCB</h1>
-            
-            <div class="hand-column">
-            <p style = "Helvetica Now Pro Display ExtraBold;">This was a project to teach myself PCB design through Altium Designer. Using buttons, a mini display and an ESP-32, 
-                I made a simple game board that can upload basic arduino games to play. I will link the PCB file so that you may view or produce for your own use!
-            </p>
-
-            </div>
-            <div class="video" style="margin-left: 35%; height: 50%; width: 60%;">
-                <video width="100%" controls>
-                    <source src="pcbanimation.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </header>
-
-    </div>
-
-        <!-- Van Helsing Section -->
-        <div class="container-md vh-100 pt-5" id="van-helsing" style=" margin-top: 10%; margin-top: 400px;">
-            <div>
-                <img src="flyingbat.gif" style="height: 125px; width: 200px; margin-bottom: 20px" id="car" alt="Car Animation" class="car animate">
-                <script src="script.js"></script>
-            </div>
-            <header>
-                <h1  style = "Helvetica Now Pro Display ExtraBold; color: rgb(48, 200, 154); text-align: left; margin-right: 13%;"  >Van Helsing</h1>
-                
-                <div class="electric-atv-column">
-                    <p style = "Helvetica Now Pro Display ExtraBold;">This is a platformer Vampire Hunter game based on Van Helsing made using pygame and python!
-                    The you can download the game <a href="Van Helsing.exe" download="Van Helsing.exe">here</a> and the assets <a href="assets.zip" 
-                    download="assets.zip">here</a>, just unzip the assets and drag the game executable into the folder and click to play! (Note that 
-                windows may detect the game as a virus, just the way the game compiled into an executable) </p>
-            </div>
-
-            <ul class="game-controls">
-                <li>W: Jump</li>
-                <li>A: Move Left</li>
-                <li>D: Move Right</li>
-                <li>Q: Throw Crystals</li>
-                <li>Spacebar: Shoot Bullets</li>
-            </ul>
-                </header>
-                <div class="video" style="margin-top: 15%; height: 100%; width: 110%;">
-                    <video width="100%" controls>
-                        <source src="vanhelsing.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-
-            <button id="scrollButton"><img src="scroll1.png"></button>
-
-            <script>
-                document.getElementById('scrollButton').addEventListener('click', function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            </script>
-    
-    </body>
-
-
-
-
-
-  <!-- CONTACT -->
-  <div class="container-md vh-100 pt-5" id="contact" style="margin: 9% auto;">
-
-
-    <div class="container-sm">
-      <h1 class="text-center pt-5 ">CONNECT WITH ME</h1>
-      <div class="container-fluid">
-
-        <div style="">
-
-          <a href="https://github.com/vijayeshkhullar/vijayeshkhullar.github.io" target="_blank"><img
-              src="https://img.icons8.com/nolan/512/github.png"
-              style="height: 60px; margin-left: 16%; margin-top: 2% "/></a>
-
-          <a href="resumenew.pdf" target="_blank"><img src="resumelogo.png" style="height: 50px; margin-left: 16%; margin-top: 2%" /></a>
-
-          <a href="https://twitter.com/khullarvijayesh" target="_blank"><img src="twitterlogo.png"
-              style="height: 100px; margin-left: 15%; margin-top: 2%" /></a>
-
-          <a href="https://www.linkedin.com/in/vijayesh-khullar/" target="_blank"><img src="linkedinlogo.png"
-              style="height: 40px; margin-left: 15%; margin-top: 2%" /></a>
         </div>
-      </div>
+    </section>
+
+
+    <!-- engineering projects -->
+    <section id="engineering" class="section">
+        <h2>engineering projects</h2>
+        <div class="grid">
+
+            <div class="card" data-project="spi">
+                <h3>spi fpga</h3>
+                <p>implemented spi master-slave on fpga.</p>
+            </div>
+
+            <div class="card" data-project="rc4">
+                <h3>rc4 fpga accelerator</h3>
+                <p>parallel fpga brute-force architecture.</p>
+            </div>
+
+            <div class="card" data-project="dds">
+                <h3>signal modulation</h3>
+                <p>modulating signals using lfsr on fpga.</p>
+            </div>
+
+            <div class="card" data-project="ecu">
+                <h3>rear ecu for off-road vehicle</h3>
+                <p>signal collection and data processing.</p>
+            </div>
+
+            <div class="card" data-project="van">
+                <h3>van helsing platformer</h3>
+                <p>python platformer using pygame.</p>
+            </div>
+            <!--
+            <div class="card" data-project="hand gesture puppet">
+                <h3>hand gesture puppet</h3>
+                <p>open cv hand gesture recognition.</p>
+            </div>
+            -->
+            
+        </div>
+    </section>
+
+    <!-- astrophotography -->
+    <section id="astro" class="section">
+        <h2>astrophotography</h2>
+        <p class="section-subtitle">night sky images, long exposures, deep-sky captures.</p>
+
+        <div class="gallery-grid">
+        <div class="image-wrapper">
+            <img src="images/astro1.jpg" data-lightbox="true">
+            <a href="images/astro1.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/astro2.jpg" data-lightbox="true">
+            <a href="images/astro2.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/astro3.jpg" data-lightbox="true">
+            <a href="images/astro3.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/astro4.jpg" data-lightbox="true">
+            <a href="images/astro4.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/astro5.jpg" data-lightbox="true">
+            <a href="images/astro5.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- adventures -->
+    <section id="adventure" class="section">
+        <h2>adventures</h2>
+        <p class="section-subtitle">hiking • scuba • skydiving • travel</p>
+
+        <div class="gallery-grid">
+
+        <div class="image-wrapper">
+            <img src="images/adventure_hike1.jpg" data-lightbox="true">
+            <a href="images/adventure_hike1.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>            
+        <!--<img src="images/adventure_scuba1.jpg" alt="scuba" data-lightbox="true" />-->
+        <div class="image-wrapper">
+            <img src="images/adventure_skydiving1.png" data-lightbox="true">
+            <a href="images/adventure_skydiving1.png" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/lakelouise.jpg" data-lightbox="true">
+            <a href="images/lakelouise.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>©vijayesh</p>
+    </footer>
+
+    <!-- slide-in project panel -->
+    <div id="project-panel">
+        <button id="panel-close">×</button>
+        <div id="project-content"></div>
     </div>
 
-
-  </div>
+    <!-- image lightbox -->
+    <div id="lightbox">
+        <span id="lightbox-close">×</span>
+        <img id="lightbox-img" src="" alt="enlarged image" />
+    </div>
 
     <script src="script.js"></script>
-
-
-
-
-
+</body>
 </html>
