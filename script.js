@@ -406,3 +406,53 @@ function pausePanelVideos() {
         v.currentTime = 0;   // optional: reset playback to start
     });
 }
+document.addEventListener("click", (e) => {
+    const wrapper = e.target.closest(".video-wrapper");
+    if (!wrapper) return;
+
+    const video = wrapper.querySelector("video");
+
+    if (video.paused) {
+        video.play();
+        wrapper.classList.add("playing");
+    } else {
+        video.pause();
+        wrapper.classList.remove("playing");
+        video.currentTime = 0;
+    }
+});
+
+const videoLightbox = document.getElementById("video-lightbox");
+const videoLightboxVideo = document.getElementById("video-lightbox-video");
+const videoLightboxClose = document.getElementById("video-lightbox-close");
+
+// open video lightbox
+document.addEventListener("click", e => {
+    const thumb = e.target.closest(".adventure-thumb");
+    if (!thumb) return;
+
+    const src = thumb.querySelector("source")?.src || thumb.src;
+
+    videoLightboxVideo.src = src;
+    videoLightbox.classList.add("open");
+    videoLightboxVideo.play();
+});
+
+// close video lightbox
+function closeVideoLightbox() {
+    videoLightbox.classList.remove("open");
+    videoLightboxVideo.pause();
+    videoLightboxVideo.currentTime = 0;  // reset ONLY when closing lightbox
+    videoLightboxVideo.src = "";
+}
+
+videoLightboxClose.addEventListener("click", closeVideoLightbox);
+
+videoLightbox.addEventListener("click", e => {
+    if (e.target === videoLightbox) closeVideoLightbox();
+});
+
+// Escape key closes it
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeVideoLightbox();
+});
