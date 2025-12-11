@@ -439,3 +439,118 @@ code {
     object-fit: cover;
     cursor: pointer;
 }
+.subsection {
+    margin-bottom: 50px;
+}
+
+.subsection h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.adventure-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.adventure-list li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #ddd;
+}
+
+.adventure-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #888;
+}
+
+.adventure-list.completed li::before {
+    content: "✓";
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* two-column layout */
+.adventure-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 750px) {
+    .adventure-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* collapsible sections */
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.collapsible-header h3 {
+    margin: 0;
+}
+
+.arrow {
+    transition: transform 0.25s ease;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* collapse animation container */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+/* when open */
+.collapsible-section.open .collapsible-content {
+    max-height: 1000px; /* large enough for list */
+}
+
+.collapsible-section.open .arrow {
+    transform: rotate(90deg);
+}
+
+/* list styling */
+.adventure-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.adventure-list li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #ddd;
+}
+
+.adventure-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #888;
+}
+
+.adventure-list.completed li::before {
+    content: "✓";
+    color: #2ecc71;
+    font-weight: bold;
+}
+.adventure-columns {
+    margin-top: 40px;   /* adjust spacing here */
+}

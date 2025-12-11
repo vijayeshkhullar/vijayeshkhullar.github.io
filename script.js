@@ -456,3 +456,11 @@ videoLightbox.addEventListener("click", e => {
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeVideoLightbox();
 });
+
+// collapsible bucket/completed sections
+document.querySelectorAll(".collapsible-header").forEach(header => {
+    header.addEventListener("click", () => {
+        const section = header.parentElement;
+        section.classList.toggle("open");
+    });
+});
