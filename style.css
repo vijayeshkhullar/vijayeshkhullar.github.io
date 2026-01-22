@@ -331,7 +331,20 @@ code {
 .image-wrapper {
     position: relative;
     width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 10px;
 }
+
+.image-wrapper img,
+.image-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
 
 .download-btn {
     position: absolute;
