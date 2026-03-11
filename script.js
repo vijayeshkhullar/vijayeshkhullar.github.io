@@ -200,105 +200,7 @@ HAL_CAN_AddTxMessage(&hcan1, &txHeader, msg, &mailbox);
         using oop principles, the enemies and player are based on the same class, implemented seperately (automated the enemy 
         ai to detect the player in range and attack).</p>
     `,
-    spi: `
-        <h2>spi master and slave on fpga</h2>
-<p>
-    This module implements a configurable <strong>SPI (Serial Peripheral Interface) Master</strong> 
-    suitable for FPGA designs. It supports all four standard SPI modes (0–3), programmable clock 
-    polarity/phase, and a clock-divider-based SPI clock generator. The design handles both MOSI transmission 
-    and MISO reception with precise edge-aligned sampling.
-</p>        <p>
-            two key considerations are the spi clock phase (CPHA) and clock polarities (CPOL) determined by the mode
-        </p>
-        <pre><code class="language-verilog">// Clock Polarity
-// cpol = 0 means clock idles at 0
-// cpol = 1 means clock idles at 1
-assign cpol  = (spi_mode == 2) | (spi_mode == 3);
-// Clock Phase
-assign cpha  = (spi_mode == 1) | (spi_mode == 3); </code></pre>
-
-<p></p>
-<h3>Key Features</h3>
-<p></p>
-<ul>
-    <li><strong>Supports SPI Modes 0–3</strong><br>
-        Clock polarity (CPOL) and phase (CPHA) settings are automatically derived from the <code>spi_mode</code> parameter.
-    </li>
-    <li><strong>Configurable SPI Clock Frequency</strong><br>
-        A clock divider controls the SPI SCK rate. With the default divider, the module generates a 
-        <strong>25&nbsp;MHz SPI clock</strong>.
-    </li>
-    <li><strong>8-bit Full-Duplex Transfers</strong><br>
-        Transmits and receives one byte per transaction with MSB-first shifting.
-    </li>
-    <li><strong>Hardware Edge Detection</strong><br>
-        The module tracks both leading and trailing edges of SCK to correctly align sampling and shifting 
-        based on SPI mode.
-    </li>
-    <li><strong>Flow Control Signals</strong><br>
-        <code>tx_valid</code> / <code>tx_ready</code> handshake for transmitting bytes<br>
-        <code>rx_valid</code> indicates when a full byte has been received
-    </li>
-    <li><strong>MOSI &amp; MISO Handling</strong><br>
-        MOSI is updated on the correct clock edge depending on CPHA, and MISO is sampled on the aligned edge.
-    </li>
-    <li><strong>Reset-Safe Design</strong><br>
-        All counters, shift registers, and outputs initialize to known states.
-    </li>
-</ul>
-<p></p>
-
-<pre><code class="language-verilog">// read miso data or generate mosi data
-else 
-    begin
-      rx_valid   <= 1'b0;
-      rx_valid   <= 1'b0;
-      if (tx_ready) // if ready, reset bit counts to default
-      begin
-        rx_bit_count <= 3'b111;
-        tx_bit_count <= 3'b111; 
-      end
-      else if (tx_valid & ~cpha) 
-      begin
-        mosi <= tx[3'b111];
-        tx_bit_count <= 3'b110;
-      end
-      else if ((lead_edge & cpha) | (last_edge & ~cpha))
-      begin
-        tx_bit_count <= tx_bit_count - 1'b1;
-        mosi     <= tx[tx_bit_count];
-      end
-      else if ((lead_edge & ~cpha) | (last_edge & cpha))
-      begin
-        rx[rx_bit_count] <= miso;
-        rx_bit_count <= rx_bit_count - 1'b1;
-        if (rx_bit_count == 3'b000)
-        begin
-          rx_valid <= 1'b1;
-        end
-      end
-    end</code></pre>
-
-<h3>How It Works</h3>
-<p>
-    <strong>1. Clock Division:</strong><br>
-    The incoming system clock is divided to generate SCK. The module uses edge counters to produce exactly 
-    16 clock edges per 8-bit frame.
-</p>
-
-<p>
-    <strong>2. Bit Shifting:</strong><br>
-    TX bits shift out at the correct moment depending on CPHA, while RX bits are sampled on the opposite 
-    aligned edge and assembled into an 8-bit register.
-</p>
-
-<p>
-    <strong>3. Byte Framing:</strong><br>
-    After the final bit is received, the module asserts <code>rx_valid</code> to signal that a full byte is ready.
-</p>
-    `
 };
-
 
 // helper: open panel with content
 function openPanelWithContent(html) {
@@ -464,3 +366,62 @@ document.querySelectorAll(".collapsible-header").forEach(header => {
         section.classList.toggle("open");
     });
 });
+projectDetails.trial = `
+<h2>The Trial — Franz Kafka</h2>
+
+<img src="images/thetrial.jpg" class="review-img" data-lightbox="true">
+
+<p>
+Josef K., a man arrested and prosecuted by an inaccessible authority, 
+with the nature of the crime of which he is accused revealed neither to him nor to the reader.
+</p>
+
+<p><strong>rating:</strong> TBD</p>
+
+<p>
+Review TBD
+</p>
+`;
+
+projectDetails.alchemist = `
+<h2>The Alchemist</h2>
+
+<img src="images/thealchemist.jpg" class="review-img" data-lightbox="true">
+
+<p>
+The story follows Santiago, a shepherd boy, in his journey across North Africa 
+to the Egyptian pyramids after he dreams of finding treasure there.
+</p>
+
+<p><strong>rating:</strong> ★★★⯨☆</p>
+
+<p>
+the story and premise is incredibly engaging, and Santiago's growth and development are fascinating, however,
+the plot slows down significantly, and results in a narrative that becomes very repetitive midway through the book. 
+It also almost felt as if the buildup and conclusion was extremely anti-climactic, and towards the end, it was a story that could 
+be summarized as "never back down, never give up".
+</p>
+`;
+
+projectDetails.hotel = `
+<h2>The Grand Budapest Hotel</h2>
+
+<img src="images/thegrandbudapesthotel.jpg" class="review-img" data-lightbox="true">
+
+<p>
+The Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. 
+Zero, a junior lobby boy, becomes Gustave's friend and protégé. Gustave prides himself on providing first-class 
+service to the hotel's guests, and when one of his guests mysteriously dies, he is framed as the prime suspect.<\p>
+
+<p><strong>rating:</strong> ★★★★★</p>
+
+<p>
+A visually unique film, with each environment and setting unlike other films, and framing of characters truly 
+fascinating. I especially enjoyed the way the story was told, and the acting was almost choppy in a good way. <\p>
+<p>
+The story had me feeling a range of emotions with a surprisingly bleak ending (in an inexplicably positive way). It 
+almost felt like a play in the best ways.
+</p>
+
+
+`;
