@@ -420,7 +420,7 @@ A visually unique film, with each environment and setting unlike other films, an
 fascinating. I especially enjoyed the way the story was told, and the acting was almost choppy in a good way. <\p>
 <p>
 The story had me feeling a range of emotions with a surprisingly bleak ending (in an inexplicably positive way). It 
-almost felt like a play in the best ways.
+almost felt like a play on tv.
 </p>
 
 
