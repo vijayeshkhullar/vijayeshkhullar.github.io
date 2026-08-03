@@ -6,6 +6,21 @@
     <title>vijayesh | portfolio</title>
     <link rel="stylesheet" href="style.css" />
 
+    <!-- set theme before paint to avoid a flash of the wrong mode -->
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = saved || (prefersDark ? "dark" : "light");
+            if (theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+        })();
+    </script>
+
+    <!-- Whimsical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Prism.js syntax highlighting -->
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
@@ -28,6 +43,9 @@
             <li><a href="#adventure">adventures</a></li>
             <li><a href="#reviews">reviews</a></li>
         </ul>
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle light/dark mode">🌙</button>
+        </div>
     </nav>
 
     <!-- hero -->
@@ -59,7 +77,7 @@
 
         <div class="timeline-item baja">
             <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <a class="timeline-card" href="https://www.bajasae.net/" target="_blank" rel="noopener">
                 <div class="timeline-logo">
                     <img src="images/baja2_logo.png" alt="baja logo">
                 </div>
@@ -69,12 +87,13 @@
                     Worked on the mechatronics side of baja, contributing to electronics,
                     vehicle systems, and practical engineering design.
                 </p>
-            </div>
+                <span class="visit-link">visit site</span>
+            </a>
         </div>
 
         <div class="timeline-item envo">
             <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <a class="timeline-card" href="https://envodrive.com/" target="_blank" rel="noopener">
                 <div class="timeline-logo">
                     <img src="images/envo_logo.png" alt="envo logo">
                 </div>
@@ -84,12 +103,13 @@
                     Designing electronic system
                     and product-focused development.
                 </p>
-            </div>
+                <span class="visit-link">visit site</span>
+            </a>
         </div>
 
         <div class="timeline-item tenstorrent">
             <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <a class="timeline-card" href="https://tenstorrent.com/" target="_blank" rel="noopener">
                 <div class="timeline-logo">
                     <img src="images/tenstorrent_logo.jpg" alt="tenstorrent logo">
                 </div>
@@ -99,7 +119,8 @@
                         Upcoming internship in AI hardware,
                         processor systems, and modern compute engineering.
                 </p>
-            </div>
+                <span class="visit-link">visit site</span>
+            </a>
         </div>
 
     </div>
@@ -439,7 +460,9 @@
     <!-- image lightbox -->
     <div id="lightbox">
         <span id="lightbox-close">×</span>
+        <span id="lightbox-prev" class="lightbox-nav">&#10094;</span>
         <img id="lightbox-img" src="" alt="enlarged image" />
+        <span id="lightbox-next" class="lightbox-nav">&#10095;</span>
     </div>
 
     <script src="script.js"></script>

@@ -251,15 +251,63 @@ panelClose.addEventListener("click", () => {
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const lightboxClose = document.getElementById("lightbox-close");
+const lightboxPrev = document.getElementById("lightbox-prev");
+const lightboxNext = document.getElementById("lightbox-next");
+
+// track the set of images in whichever gallery was clicked, so arrows
+// can step through just that gallery
+let currentGalleryImages = [];
+let currentImageIndex = 0;
+
+function showLightboxImage() {
+    if (!currentGalleryImages.length) return;
+    lightboxImg.src = currentGalleryImages[currentImageIndex].src;
+    // hide arrows entirely if there's only one image to look at
+    const multiple = currentGalleryImages.length > 1;
+    lightboxPrev.style.display = multiple ? "flex" : "none";
+    lightboxNext.style.display = multiple ? "flex" : "none";
+}
+
+function showNextImage() {
+    if (!currentGalleryImages.length) return;
+    currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+    showLightboxImage();
+}
+
+function showPrevImage() {
+    if (!currentGalleryImages.length) return;
+    currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+    showLightboxImage();
+}
 
 // any click on an element with data-lightbox="true"
 document.addEventListener("click", e => {
     const target = e.target;
 
     if (target.matches("img[data-lightbox]")) {
-        lightboxImg.src = target.src;
+        // gather every lightbox-able image in the same gallery-grid
+        const gallery = target.closest(".gallery-grid");
+        currentGalleryImages = gallery
+            ? Array.from(gallery.querySelectorAll("img[data-lightbox]"))
+            : [target];
+        currentImageIndex = currentGalleryImages.indexOf(target);
+        if (currentImageIndex === -1) currentImageIndex = 0;
+
+        showLightboxImage();
         lightbox.classList.add("open");
     }
+});
+
+// arrow button clicks (stop propagation so they don't trigger the
+// background-click-to-close handler below)
+lightboxPrev.addEventListener("click", (e) => {
+    e.stopPropagation();
+    showPrevImage();
+});
+
+lightboxNext.addEventListener("click", (e) => {
+    e.stopPropagation();
+    showNextImage();
 });
 
 // close lightbox on X
@@ -267,11 +315,18 @@ lightboxClose.addEventListener("click", () => {
     lightbox.classList.remove("open");
 });
 
-// close lightbox when clicking the background (not the image)
+// close lightbox when clicking the background (not the image or arrows)
 lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) { 
         lightbox.classList.remove("open");
     }
+});
+
+// left/right arrow keys navigate while lightbox is open
+document.addEventListener("keydown", e => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "ArrowRight") showNextImage();
+    if (e.key === "ArrowLeft") showPrevImage();
 });
 
 // close panel when pressing Escape
@@ -366,6 +421,28 @@ document.querySelectorAll(".collapsible-header").forEach(header => {
         section.classList.toggle("open");
     });
 });
+
+// light / dark mode toggle
+const themeToggle = document.getElementById("theme-toggle");
+
+function updateToggleIcon() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+}
+
+themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+    } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }
+    updateToggleIcon();
+});
+
+updateToggleIcon();
 projectDetails.trial = `
 <h2>The Trial — Franz Kafka</h2>
 
