@@ -836,6 +836,7 @@ code {
 
 /* ============ reviews ============ */
 
+/* kept for any review image still opened in the slide-in panel */
 .review-img {
     width: 190px;
     float: left;
@@ -844,13 +845,189 @@ code {
     box-shadow: var(--shadow-soft);
 }
 
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+/* fixed-height slot lets the card grow on hover without shifting the page */
+.review-card-slot {
+    position: relative;
+    height: 330px;
+}
+
+.review-card-slot:hover {
+    z-index: 20;
+}
+
+.review-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    box-shadow: var(--shadow-soft);
+    border-top: 6px solid var(--coral);
+    transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.64, 1),
+                box-shadow 0.28s ease,
+                background 0.3s ease;
+    transform-origin: top center;
+}
+
+.review-card:hover {
+    transform: scale(1.04);
+    box-shadow: var(--shadow-pop);
+}
+
+.review-card-slot:nth-child(3n+1) .review-card { border-top-color: var(--coral); }
+.review-card-slot:nth-child(3n+2) .review-card { border-top-color: var(--purple); }
+.review-card-slot:nth-child(3n+3) .review-card { border-top-color: var(--teal); }
+
+.review-compact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.review-cover {
+    width: 100%;
+    max-width: 118px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+}
+
+.review-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.review-card h3 {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.25;
+}
+
+.review-kind {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    opacity: 0.85;
+}
+
+/* star rating: 5 grey stars with a gold overlay clipped to the score */
+.stars {
+    position: relative;
+    display: inline-block;
+    font-size: 1.05rem;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.stars::before {
+    content: "★★★★★";
+    color: var(--ink-soft);
+    opacity: 0.3;
+}
+
+.stars.unrated::before {
+    opacity: 0.22;
+}
+
+.stars-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--yellow);
+}
+
+.stars-fill::before {
+    content: "★★★★★";
+}
+
+.review-score {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    background: var(--blob-sky);
+    padding: 2px 11px;
+    border-radius: var(--radius-pill);
+}
+
+.review-card-slot:nth-child(3n+1) .review-score { background: var(--blob-pink); }
+.review-card-slot:nth-child(3n+2) .review-score { background: var(--blob-sky); }
+.review-card-slot:nth-child(3n+3) .review-score { background: var(--blob-mint); }
+
+/* details revealed on hover */
+.review-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    text-align: left;
+    transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
+}
+
+.review-card:hover .review-details,
+.review-card:focus-within .review-details {
+    max-height: 420px;
+    opacity: 1;
+    margin-top: 14px;
+}
+
+.review-details p {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0 0 8px 0;
+}
+
+.review-verdict {
+    padding-top: 8px;
+    border-top: 2px dashed rgba(128, 120, 160, 0.25);
+}
+
+/* touch / narrow screens: no hover, so show everything */
+@media (max-width: 760px) {
+    .review-card-slot {
+        height: auto;
+    }
+
+    .review-card {
+        position: static;
+    }
+
+    .review-card:hover {
+        transform: none;
+    }
+
+    .review-details {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+        margin-top: 14px;
+    }
+}
+
 /* ============ horizontal timeline ============ */
 
+/* auto-fitting track: columns size themselves to the number of items,
+   so adding a 5th/6th experience just reflows — no manual column count */
 .timeline-horizontal {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 22px;
     margin-top: 50px;
     align-items: start;
 }
@@ -859,52 +1036,134 @@ code {
     content: "";
     position: absolute;
     top: 22px;
-    left: 8%;
-    right: 8%;
+    left: 6%;
+    right: 6%;
     height: 5px;
     border-radius: var(--radius-pill);
-    background: linear-gradient(to right, var(--coral), var(--teal), var(--purple));
+    background: linear-gradient(to right, var(--coral), var(--teal), var(--purple), var(--yellow));
     opacity: 0.6;
     z-index: 0;
 }
 
+/* fixed-height slot so the card can grow on hover without
+   pushing the rest of the page around */
 .timeline-item {
     position: relative;
     z-index: 1;
+    height: 210px;
+}
+
+.timeline-item:hover {
+    z-index: 20;
 }
 
 .timeline-dot {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin: 12px auto 20px auto;
+    margin: 12px auto 0 auto;
     box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.6), var(--shadow-soft);
 }
 
+html[data-theme="dark"] .timeline-dot {
+    box-shadow: 0 0 0 6px rgba(38, 33, 67, 0.9), var(--shadow-soft);
+}
+
+/* the card floats in the slot; hover expands it downward over content below */
 .timeline-card {
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
     background: var(--card-bg);
     border-radius: var(--radius-md);
-    padding: 24px;
-    min-height: 200px;
+    padding: 20px 18px;
     box-shadow: var(--shadow-soft);
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background 0.3s ease;
     border-top: 6px solid transparent;
     display: block;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    position: relative;
+    text-align: center;
+    transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.64, 1),
+                box-shadow 0.28s ease,
+                background 0.3s ease;
+    transform-origin: top center;
 }
 
 .timeline-card:hover {
-    transform: translateY(-6px) rotate(1deg);
+    transform: scale(1.07);
     box-shadow: var(--shadow-pop);
+}
+
+/* compact resting state: logo + name + date only */
+.timeline-compact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.timeline-logo {
+    margin: 0;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-logo img {
+    max-width: 78px;
+    max-height: 52px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: var(--radius-sm);
+}
+
+.timeline-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    background: var(--blob-sky);
+    padding: 2px 11px;
+    border-radius: var(--radius-pill);
+}
+
+/* details stay collapsed until hover */
+.timeline-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
+}
+
+.timeline-card:hover .timeline-details,
+.timeline-card:focus-visible .timeline-details {
+    max-height: 260px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.timeline-card p {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
 }
 
 .timeline-card .visit-link {
     display: inline-block;
     margin-top: 10px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--purple-dark);
 }
@@ -913,60 +1172,35 @@ code {
     content: " ↗";
 }
 
-.timeline-logo {
-    margin-bottom: 14px;
-}
-
-.timeline-logo img {
-    width: 64px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    border-radius: var(--radius-sm);
-}
-
-.timeline-date {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--ink-soft);
-    margin-bottom: 10px;
-    background: var(--blob-sky);
-    padding: 3px 12px;
-    border-radius: var(--radius-pill);
-}
-
-.timeline-card h3 {
-    margin-bottom: 10px;
-    font-size: 1.15rem;
-}
-
-.timeline-card p {
-    font-size: 0.96rem;
-    color: var(--ink-soft);
-    line-height: 1.65;
-}
-
-/* baja */
+/* per-company accents */
 .timeline-item.baja .timeline-dot { background: var(--coral); }
 .timeline-item.baja .timeline-card { border-top-color: var(--coral); }
 .timeline-item.baja .timeline-date { background: var(--blob-pink); }
 
-/* envo */
 .timeline-item.envo .timeline-dot { background: var(--green); }
 .timeline-item.envo .timeline-card { border-top-color: var(--green); }
 .timeline-item.envo .timeline-date { background: var(--blob-mint); }
 
-/* tenstorrent */
 .timeline-item.tenstorrent .timeline-dot { background: var(--purple); }
 .timeline-item.tenstorrent .timeline-card { border-top-color: var(--purple); }
 .timeline-item.tenstorrent .timeline-date { background: var(--blob-sky); }
 
-/* responsive */
-@media (max-width: 950px) {
+.timeline-item.orbit .timeline-dot { background: var(--yellow); }
+.timeline-item.orbit .timeline-card { border-top-color: var(--yellow); }
+.timeline-item.orbit .timeline-date { background: var(--blob-yellow); }
+
+/* fallback accent for any future entry without its own class */
+.timeline-item .timeline-dot { background: var(--teal); }
+.timeline-item.baja .timeline-dot { background: var(--coral); }
+.timeline-item.envo .timeline-dot { background: var(--green); }
+.timeline-item.tenstorrent .timeline-dot { background: var(--purple); }
+.timeline-item.orbit .timeline-dot { background: var(--yellow); }
+
+/* ---- mobile / narrow: vertical rail, details always visible ---- */
+@media (max-width: 760px) {
     .timeline-horizontal {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 18px;
     }
 
     .timeline-horizontal::before {
@@ -976,17 +1210,43 @@ code {
         bottom: 0;
         width: 5px;
         height: auto;
-        background: linear-gradient(to bottom, var(--coral), var(--teal), var(--purple));
+        background: linear-gradient(to bottom, var(--coral), var(--teal), var(--purple), var(--yellow));
     }
 
+    /* slot no longer needs a fixed height once cards are always expanded */
     .timeline-item {
         display: grid;
         grid-template-columns: 34px 1fr;
         gap: 16px;
         align-items: start;
+        height: auto;
     }
 
     .timeline-dot {
         margin: 2px 0 0 0;
+    }
+
+    .timeline-card {
+        position: static;
+        text-align: left;
+    }
+
+    .timeline-card:hover {
+        transform: none;
+    }
+
+    .timeline-compact {
+        align-items: flex-start;
+    }
+
+    .timeline-logo {
+        justify-content: flex-start;
+    }
+
+    .timeline-details {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+        margin-top: 12px;
     }
 }
