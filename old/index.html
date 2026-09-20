@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vijayesh | portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- set theme before paint to avoid a flash of the wrong mode -->
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = saved || (prefersDark ? "dark" : "light");
+            if (theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+        })();
+    </script>
+
+    <!-- Whimsical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Prism.js syntax highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-verilog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+</head>
+<body>
+
+
+    <!-- navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">vijayesh</div>
+        <ul class="nav-links">
+            <li><a href="#about">about</a></li>
+            <li><a href="#timeline">timeline</a></li>
+            <li><a href="#engineering">engineering</a></li>
+            <li><a href="#photos">photography</a></li>
+            <li><a href="#adventure">adventures</a></li>
+            <li><a href="#reviews">reviews</a></li>
+        </ul>
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle light/dark mode">🌙</button>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <header class="hero">
+        <h1>engineering • photography • adventure</h1>
+        <p>portfolio of projects, photography, and outdoor stories.</p>
+    </header>
+
+    <!-- about me (under hero) -->
+    <section id="about" class="section about-section">
+        <div class="about-container">
+            <img src="images/me.jpg" alt="vijayesh portrait" class="about-photo" />
+            
+            <div class="about-text">
+                <h2>about me</h2>
+                <p>
+                    i am an engineering student and amateur photographer and this is my blog of exploration. i work on digital design, embedded systems, 
+                    shooting the night sky, and documenting my hikes, <!--scuba dives,-->skydives, and travels.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section">
+    <h2>experience timeline</h2>
+    <p class="section-subtitle">teams, internships, and engineering work i've been part of.</p>
+
+    <div class="timeline-horizontal">
+
+        <div class="timeline-item baja">
+            <div class="timeline-dot"></div>
+            <a class="timeline-card" href="https://www.bajasae.net/" target="_blank" rel="noopener">
+                <div class="timeline-compact">
+                    <div class="timeline-logo">
+                        <img src="images/baja2_logo.png" alt="baja logo">
+                    </div>
+                    <h3>Baja SAE</h3>
+                    <span class="timeline-date">2024 &ndash; present</span>
+                </div>
+                <div class="timeline-details">
+                    <p>
+                        Developed electronic sensor system for Baja Car, including Rear Electronic Control Unit PCB.
+                    </p>
+                    <span class="visit-link">visit site</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="timeline-item envo">
+            <div class="timeline-dot"></div>
+            <a class="timeline-card" href="https://envodrive.com/" target="_blank" rel="noopener">
+                <div class="timeline-compact">
+                    <div class="timeline-logo">
+                        <img src="images/envo_logo.png" alt="envo logo">
+                    </div>
+                    <h3>Envo Drive Systems</h3>
+                    <span class="timeline-date">2025</span>
+                </div>
+                <div class="timeline-details">
+                    <p>
+                        Redesigned Electronic harness and vehicle control PCBs.
+                        Product focused development with international compliance.
+                    </p>
+                    <span class="visit-link">visit site</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="timeline-item tenstorrent">
+            <div class="timeline-dot"></div>
+            <a class="timeline-card" href="https://tenstorrent.com/" target="_blank" rel="noopener">
+                <div class="timeline-compact">
+                    <div class="timeline-logo">
+                        <img src="images/tenstorrent_logo.jpg" alt="tenstorrent logo">
+                    </div>
+                    <h3>Tenstorrent</h3>
+                    <span class="timeline-date">2026</span>
+                </div>
+                <div class="timeline-details">
+                    <p>
+                        FAE working on writing bare metal tests and C/C++ tests to determine CPU latencies in simulation.
+                        Also writing LLKs and testing for functionality.
+                    </p>
+                    <span class="visit-link">visit site</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="timeline-item orbit">
+            <div class="timeline-dot"></div>
+            <a class="timeline-card" href="https://www.ubcorbit.com/" target="_blank" rel="noopener">
+                <div class="timeline-compact">
+                    <div class="timeline-logo">
+                        <img src="images/orbit_logo.png" alt="orbit logo">
+                    </div>
+                    <h3>Orbit</h3>
+                    <span class="timeline-date">2026</span>
+                </div>
+                <div class="timeline-details">
+                    <p>
+                        Optics and Simulation Developer.
+                    </p>
+                    <span class="visit-link">visit site</span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    </section>
+
+
+    <!-- engineering projects -->
+    <section id="engineering" class="section">
+        <h2>engineering projects</h2>
+        <div class="grid">
+
+            <div class="card" data-project="rc4">
+                <h3>rc4 fpga accelerator</h3>
+                <p>parallel fpga brute-force architecture.</p>
+            </div>
+
+            <div class="card" data-project="dds">
+                <h3>signal modulation</h3>
+                <p>modulating signals using lfsr on fpga.</p>
+            </div>
+
+            <div class="card" data-project="ecu">
+                <h3>rear ecu for off-road vehicle</h3>
+                <p>signal collection and data processing.</p>
+            </div>
+
+            <div class="card" data-project="van">
+                <h3>van helsing platformer</h3>
+                <p>python platformer using pygame.</p>
+            </div>
+            <!--
+            <div class="card" data-project="hand gesture puppet">
+                <h3>hand gesture puppet</h3>
+                <p>open cv hand gesture recognition.</p>
+            </div>
+            -->
+            
+        </div>
+    </section>
+
+    <!-- photography -->
+    <section id="photos" class="section">
+        <h2>photography</h2>
+        <p class="section-subtitle">night sky images and other cool photos<!--, long exposures, deep-sky captures-->.</p>
+
+
+        <div class="gallery-grid">
+
+
+        <div class="image-wrapper">
+            <img src="images/jelly2.jpg" data-lightbox="true">
+            <a href="images/jelly2.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/jelly1.jpg" data-lightbox="true">
+            <a href="images/jelly1.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/bust.jpg" data-lightbox="true">
+            <a href="images/bust.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="image-wrapper">
+            <img src="images/momson.jpg" data-lightbox="true">
+            <a href="images/momson.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="image-wrapper">
+            <img src="images/startrails.jpg" data-lightbox="true">
+            <a href="images/startrails.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+
+        <div class="image-wrapper">
+            <img src="images/foggyclock.jpg" data-lightbox="true">
+            <a href="images/foggyclock.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/foggynight1.jpg" data-lightbox="true">
+            <a href="images/foggynight1.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/foggynight2.jpg" data-lightbox="true">
+            <a href="images/foggynight2.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/batman.jpg" data-lightbox="true">
+            <a href="images/batman.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/soundwave.jpg" data-lightbox="true">
+            <a href="images/soundwave.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+
+        <div class="image-wrapper">
+            <img src="images/astro2.jpg" data-lightbox="true">
+            <a href="images/astro2.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/astro3.jpg" data-lightbox="true">
+            <a href="images/astro3.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+
+
+        <div class="image-wrapper">
+            <img src="images/astro5.jpg" data-lightbox="true">
+            <a href="images/astro5.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/soul2.jpg" data-lightbox="true">
+            <a href="images/soul.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- adventures -->
+    <section id="adventure" class="section">
+        <h2>adventures</h2>
+        <p class="section-subtitle">hiking • scuba • skydiving • travel</p>
+
+        <div class="gallery-grid">
+
+        <div class="image-wrapper">
+            <img src="images/skyline.jpg" data-lightbox="true">
+            <a href="images/skyline.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="image-wrapper">
+            <video class="adventure-thumb" muted preload="metadata" playsinline>
+                <source src="videos/skydiving.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div id="video-lightbox">
+            <span id="video-lightbox-close">×</span>
+            <video id="video-lightbox-video" controls playsinline></video>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/wedgemount.jpg" data-lightbox="true">
+            <a href="images/wedgemount.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>            
+        <div class="image-wrapper">
+            <img src="images/lakelouise.jpg" data-lightbox="true">
+            <a href="images/lakelouise.jpg" download class="download-btn">
+                <svg viewBox="0 0 24 24" class="download-icon">
+                    <path fill="currentColor"
+                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
+                </svg>
+            </a>
+        </div>
+
+        
+
+
+
+        <!--end of the gallery div-->
+        </div>
+
+        <!-- bucket list & completed, combined into one collapsible -->
+        <div class="subsection collapsible-section">
+            <div class="collapsible-header">
+                <h3>adventure list</h3>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="adventure-columns">
+
+                    <div>
+                        <h4>bucket list</h4>
+                        <ul class="adventure-list">
+                            <li>scuba certification</li>
+                            <li>whistler zipline</li>
+                            <li>whistler bungee</li>
+                            <li>skiing</li>
+                            <li>snowboarding</li>
+                            <li>paraglide</li>
+                            <li>hike to panorama ridge</li>
+                            <li>wakeboard</li>
+                            <li>cold plunge</li>
+                            <li>run a half marathon</li>
+                            <li>snorkel</li>
+                            <li>ride a horse</li>
+                            <li>go on a hot air balloon</li>
+                            <li>jump off a cliff</li>
+                            <li>car racing</li>
+                            <li>drift a car</li>
+                            <li>bc caving</li>
+                            <li>cross canada trip (train or car)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>completed</h4>
+                        <ul class="adventure-list completed">
+                            <li>skydiving (british columbia)</li>
+                            <li>hike wedgemount (british columbia)</li>
+                            <li>alaskan cruise</li>
+                            <li>ride a camel (india)</li>
+                            <li>gokarting (richmond)</li>
+                            <li>escape room (kingston - improbable escapes)</li>
+                            <li>kayaking (toronto - cherry beach)</li>
+                            <li>boating license</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- reviews -->
+<section id="reviews" class="section">
+    <h2>book & movie reviews</h2>
+    <p class="section-subtitle">things i've read or watched recently.</p>
+
+    <div class="reviews-grid">
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/neuro.jpg" alt="Neuromancer cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>Neuromancer</h3>
+                        <span class="review-kind">book &middot; William Gibson</span>
+                        <span class="stars unrated" aria-label="5 out of 5">
+                            <span class="stars-fill" style="width:100%"></span>
+                        </span>
+                        <span class="review-score">5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">One of my favorite books, so good.</p>
+                </div>
+            </article>
+        </div>
+
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/akira.jpg" alt="Akira cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>Akira</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="2 out of 5">
+                            <span class="stars-fill" style="width:40%"></span>
+                        </span>
+                        <span class="review-score">2 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">Artistically good movie. Plotwise, horrible. Had to watch twice to make sure.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/thegrandbudapesthotel.jpg" alt="The Grand Budapest Hotel poster" class="review-cover">
+                    <div class="review-heading">
+                        <h3>The Grand Budapest Hotel</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars" aria-label="5 out of 5 stars">
+                            <span class="stars-fill" style="width:100%"></span>
+                        </span>
+                        <span class="review-score">5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p>
+                        A visually unique film, with each environment and setting unlike other films, and framing of
+                        characters truly fascinating. It almost felt like a play on tv.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/thealchemist.jpg" alt="The Alchemist cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>The Alchemist</h3>
+                        <span class="review-kind">book &middot; Paulo Coelho</span>
+                        <span class="stars" aria-label="3.5 out of 5 stars">
+                            <span class="stars-fill" style="width:70%"></span>
+                        </span>
+                        <span class="review-score">3.5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p>
+                        The story and premise is incredibly engaging, and Santiago's growth and development are
+                        fascinating, however, the plot slows down significantly, and results in a narrative that
+                        becomes very repetitive midway through the book.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/shaw.jpg" alt="Shawshank Redemption cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>Shawshank Redemption</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="5 out of 5">
+                            <span class="stars-fill" style="width:100%"></span>
+                        </span>
+                        <span class="review-score">5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">Easily one of my favorite movies, perfectly told.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/sixth.jpg" alt="Sixth Sense cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>Sixth Sense</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="5 out of 5">
+                            <span class="stars-fill" style="width:100%"></span>
+                        </span>
+                        <span class="review-score">5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">First watch was insane, rewatch was equally awesome.</p>
+                </div>
+            </article>
+        </div>
+
+
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/godf.jpg" alt="The Godfather cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>The Godfather</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="4 out of 5">
+                            <span class="stars-fill" style="width:0%"></span>
+                        </span>
+                        <span class="review-score">4 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">A bit long, but very entertaining.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/fight.jpg" alt="Fight Club cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>Fight Club</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="5 out of 5">
+                            <span class="stars-fill" style="width:100%"></span>
+                        </span>
+                        <span class="review-score">5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">Really cool acting and a fun story.</p>
+                </div>
+            </article>
+        </div>
+
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/whip.jpg" alt="Whiplash cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>Whiplash</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="5 out of 5">
+                            <span class="stars-fill" style="width:100%"></span>
+                        </span>
+                        <span class="review-score">5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">Definitely one of my favorites.</p>
+                </div>
+            </article>
+        </div>
+
+        
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/ody.jpg" alt="The Odyssey cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>The Odyssey</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="4 out of 5">
+                            <span class="stars-fill" style="width:80%"></span>
+                        </span>
+                        <span class="review-score">4 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">Excellent movie, except I would've preferred more story of the main character.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/shine.jpg" alt="The Shining cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>The Shining</h3>
+                        <span class="review-kind">movie</span>
+                        <span class="stars unrated" aria-label="2.5 out of 5">
+                            <span class="stars-fill" style="width:50%"></span>
+                        </span>
+                        <span class="review-score">2.5 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p class="review-verdict">Hated the ending, also kinda felt director took too many liberties and shifted away from the story.</p>
+                </div>
+            </article>
+        </div>
+
+        
+        <div class="review-card-slot">
+            <article class="review-card">
+                <div class="review-compact">
+                    <img src="images/thetrial.jpg" alt="The Trial cover" class="review-cover">
+                    <div class="review-heading">
+                        <h3>The Trial</h3>
+                        <span class="review-kind">book &middot; Franz Kafka</span>
+                        <span class="stars unrated" aria-label="3 out of 5">
+                            <span class="stars-fill" style="width:60%"></span>
+                        </span>
+                        <span class="review-score">3 / 5</span>
+                    </div>
+                </div>
+                <div class="review-details">
+                    <p>Hard to pick up, equally hard to put down.</p>
+                </div>
+            </article>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+
+    <footer>
+        <p>©vijayesh</p>
+    </footer>
+
+    <!-- slide-in project panel -->
+    <div id="project-panel">
+        <button id="panel-close">×</button>
+        <div id="project-content"></div>
+    </div>
+
+    <!-- image lightbox -->
+    <div id="lightbox">
+        <span id="lightbox-close">×</span>
+        <span id="lightbox-prev" class="lightbox-nav">&#10094;</span>
+        <img id="lightbox-img" src="" alt="enlarged image" />
+        <span id="lightbox-next" class="lightbox-nav">&#10095;</span>
+    </div>
+
+    <script src="script.js"></script>
+
+
+    
+</body>
+</html>
+

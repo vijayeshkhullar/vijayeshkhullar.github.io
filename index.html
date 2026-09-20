@@ -4,65 +4,115 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vijayesh | portfolio</title>
+    <meta name="description" content="portfolio of projects, photography, and outdoor stories." />
+    <meta name="theme-color" content="#0a0f26" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0f26'/%3E%3Cpath d='M16 5l2.6 8.4L27 16l-8.4 2.6L16 27l-2.6-8.4L5 16l8.4-2.6z' fill='%23ffb35c'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="style.css" />
 
     <!-- set theme before paint to avoid a flash of the wrong mode -->
     <script>
         (function () {
-            const saved = localStorage.getItem("theme");
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            const theme = saved || (prefersDark ? "dark" : "light");
-            if (theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            var root = document.documentElement;
+            root.classList.add("js");
+            var saved = null;
+            try { saved = localStorage.getItem("theme"); } catch (e) {}
+            var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            var theme = saved || (prefersDark ? "dark" : "light");
+            root.setAttribute("data-theme", theme === "light" ? "light" : "dark");
         })();
     </script>
 
-    <!-- Whimsical fonts -->
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Prism.js syntax highlighting -->
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-verilog.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-verilog.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
 
+    <!-- icon sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-download" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.6A8.4 8.4 0 0 1 9.4 4a8.4 8.4 0 1 0 10.6 10.6z"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+        <symbol id="i-chev-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+        <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+        <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M8.5 5.2v13.6a.6.6 0 0 0 .9.5l11-6.8a.6.6 0 0 0 0-1L9.4 4.7a.6.6 0 0 0-.9.5z"/></symbol>
+        <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></symbol>
+        <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+        <symbol id="i-quote" viewBox="0 0 24 24"><path d="M4 5.5h16v11H10l-5 4v-4H4z"/></symbol>
+    </svg>
+
+    <a class="skip-link" href="#about">skip to content</a>
 
     <!-- navbar -->
-    <nav id="navbar">
-        <div class="nav-logo">vijayesh</div>
-        <ul class="nav-links">
-            <li><a href="#about">about</a></li>
-            <li><a href="#timeline">timeline</a></li>
-            <li><a href="#engineering">engineering</a></li>
-            <li><a href="#photos">photography</a></li>
-            <li><a href="#adventure">adventures</a></li>
-            <li><a href="#reviews">reviews</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle light/dark mode">🌙</button>
+    <nav id="navbar" aria-label="primary">
+        <div class="nav-inner">
+            <a class="nav-logo" href="#top">vijayesh</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">about</a></li>
+                <li><a href="#timeline">timeline</a></li>
+                <li><a href="#engineering">engineering</a></li>
+                <li><a href="#photos">photography</a></li>
+                <li><a href="#adventure">adventures</a></li>
+                <li><a href="#reviews">reviews</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light/dark mode">
+                    <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+                    <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+                </button>
+                <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span>
+                </button>
+            </div>
         </div>
+        <div class="nav-progress" aria-hidden="true"></div>
     </nav>
 
+    <main>
+
     <!-- hero -->
-    <header class="hero">
-        <h1>engineering • photography • adventure</h1>
-        <p>portfolio of projects, photography, and outdoor stories.</p>
+    <header class="hero" id="top">
+        <div class="hero-band" aria-hidden="true"></div>
+        <canvas id="sky" aria-hidden="true"></canvas>
+        <div class="ridge" aria-hidden="true">
+            <svg viewBox="0 0 1440 300" preserveAspectRatio="none" focusable="false">
+                <path class="ridge-far" d="M0,300 L0.0,222.0 L6.0,220.1 L12.0,219.0 L18.0,215.9 L24.0,210.5 L30.0,210.3 L36.0,206.7 L42.0,201.2 L48.0,198.6 L54.0,201.6 L60.0,201.4 L66.0,199.0 L72.0,198.0 L78.0,194.7 L84.0,192.6 L90.0,196.9 L96.0,201.1 L102.0,201.5 L108.0,202.1 L114.0,198.1 L120.0,196.4 L126.0,193.4 L132.0,191.8 L138.0,191.6 L144.0,189.3 L150.0,187.3 L156.0,183.6 L162.0,187.4 L168.0,192.2 L174.0,193.3 L180.0,195.1 L186.0,193.7 L192.0,187.7 L198.0,187.5 L204.0,186.6 L210.0,191.1 L216.0,195.2 L222.0,195.3 L228.0,196.2 L234.0,195.0 L240.0,194.3 L246.0,195.3 L252.0,199.4 L258.0,205.0 L264.0,208.3 L270.0,206.9 L276.0,208.5 L282.0,205.0 L288.0,205.0 L294.0,200.7 L300.0,201.7 L306.0,203.9 L312.0,202.4 L318.0,200.3 L324.0,199.5 L330.0,200.0 L336.0,194.6 L342.0,185.6 L348.0,177.8 L354.0,175.3 L360.0,173.2 L366.0,174.0 L372.0,179.2 L378.0,186.9 L384.0,190.3 L390.0,191.5 L396.0,196.8 L402.0,197.3 L408.0,194.0 L414.0,191.1 L420.0,190.2 L426.0,193.0 L432.0,191.0 L438.0,192.1 L444.0,186.5 L450.0,183.3 L456.0,184.0 L462.0,187.1 L468.0,186.2 L474.0,186.2 L480.0,178.7 L486.0,177.1 L492.0,176.1 L498.0,172.2 L504.0,168.8 L510.0,164.7 L516.0,164.6 L522.0,165.5 L528.0,171.6 L534.0,171.2 L540.0,168.3 L546.0,164.4 L552.0,165.8 L558.0,169.8 L564.0,177.3 L570.0,180.2 L576.0,181.6 L582.0,180.4 L588.0,179.3 L594.0,175.9 L600.0,169.5 L606.0,162.6 L612.0,157.9 L618.0,155.5 L624.0,159.9 L630.0,157.7 L636.0,155.9 L642.0,155.5 L648.0,148.9 L654.0,148.5 L660.0,145.1 L666.0,143.3 L672.0,137.5 L678.0,133.2 L684.0,126.6 L690.0,113.0 L696.0,99.1 L702.0,95.4 L708.0,96.1 L714.0,90.1 L720.0,81.6 L726.0,75.5 L732.0,77.3 L738.0,79.5 L744.0,76.0 L750.0,81.4 L756.0,89.9 L762.0,92.0 L768.0,89.8 L774.0,90.6 L780.0,93.1 L786.0,95.7 L792.0,94.8 L798.0,87.7 L804.0,77.8 L810.0,72.0 L816.0,81.1 L822.0,89.7 L828.0,96.7 L834.0,102.2 L840.0,99.6 L846.0,106.1 L852.0,114.3 L858.0,117.8 L864.0,113.8 L870.0,109.7 L876.0,105.2 L882.0,103.9 L888.0,107.3 L894.0,113.9 L900.0,114.6 L906.0,115.0 L912.0,109.2 L918.0,110.4 L924.0,117.1 L930.0,119.5 L936.0,121.7 L942.0,119.0 L948.0,114.8 L954.0,114.8 L960.0,113.0 L966.0,105.2 L972.0,101.4 L978.0,102.4 L984.0,112.1 L990.0,116.6 L996.0,117.7 L1002.0,117.8 L1008.0,121.9 L1014.0,128.8 L1020.0,131.1 L1026.0,134.6 L1032.0,133.6 L1038.0,139.7 L1044.0,146.9 L1050.0,149.9 L1056.0,152.2 L1062.0,151.8 L1068.0,147.4 L1074.0,150.5 L1080.0,148.0 L1086.0,144.2 L1092.0,140.8 L1098.0,142.2 L1104.0,147.7 L1110.0,150.5 L1116.0,154.2 L1122.0,153.1 L1128.0,151.0 L1134.0,150.6 L1140.0,157.3 L1146.0,162.8 L1152.0,168.5 L1158.0,169.8 L1164.0,178.0 L1170.0,186.0 L1176.0,186.8 L1182.0,184.7 L1188.0,186.8 L1194.0,185.1 L1200.0,183.0 L1206.0,179.4 L1212.0,175.7 L1218.0,176.5 L1224.0,180.6 L1230.0,182.0 L1236.0,179.6 L1242.0,176.2 L1248.0,177.5 L1254.0,167.5 L1260.0,163.7 L1266.0,160.1 L1272.0,157.0 L1278.0,162.9 L1284.0,163.3 L1290.0,164.5 L1296.0,158.3 L1302.0,153.0 L1308.0,152.3 L1314.0,146.9 L1320.0,141.1 L1326.0,140.4 L1332.0,144.1 L1338.0,149.9 L1344.0,153.4 L1350.0,153.0 L1356.0,149.9 L1362.0,153.1 L1368.0,160.7 L1374.0,162.7 L1380.0,168.6 L1386.0,171.7 L1392.0,177.5 L1398.0,185.7 L1404.0,192.0 L1410.0,193.8 L1416.0,198.4 L1422.0,203.5 L1428.0,205.1 L1434.0,206.4 L1440.0,203.3 L1440,300 Z"/>
+                <path class="ridge-near" d="M0,300 L0.0,246.8 L7.0,204.3 L10.1,246.4 L17.7,198.6 L21.1,247.4 L28.6,200.1 L31.9,247.1 L36.5,216.4 L38.5,248.2 L46.8,210.9 L50.4,248.3 L58.5,229.3 L62.1,247.8 L68.5,226.7 L71.3,248.7 L78.0,217.2 L80.9,249.0 L85.4,229.7 L87.4,249.7 L93.1,209.5 L95.5,250.5 L103.1,233.3 L106.4,251.2 L114.1,235.8 L117.5,252.5 L124.5,237.4 L127.5,253.3 L132.0,217.2 L134.0,253.2 L139.4,235.1 L141.7,253.1 L150.1,216.8 L153.9,252.1 L159.9,251.4 L165.9,251.0 L171.9,251.2 L177.9,251.1 L183.9,250.8 L189.9,250.1 L195.9,249.8 L201.9,250.4 L207.9,250.9 L213.9,250.4 L219.9,251.5 L225.9,252.3 L231.9,252.5 L237.9,253.3 L243.9,253.9 L249.9,254.2 L255.9,254.3 L261.9,253.7 L267.9,252.7 L273.9,252.3 L279.9,251.6 L285.9,250.6 L291.9,249.2 L297.9,249.2 L303.9,249.3 L309.9,249.5 L315.9,249.2 L321.9,249.0 L327.9,248.7 L333.9,247.8 L339.9,247.3 L345.9,247.0 L351.9,246.1 L357.9,244.9 L363.9,245.0 L369.9,245.0 L375.9,244.8 L381.9,244.1 L387.9,242.6 L393.9,242.1 L399.9,240.9 L405.9,240.4 L411.9,241.1 L417.9,242.1 L423.9,242.2 L429.9,242.3 L435.9,242.5 L441.9,242.1 L447.9,241.3 L453.9,240.6 L459.9,240.7 L465.9,239.9 L471.9,239.2 L477.9,239.0 L483.9,238.5 L489.9,237.0 L495.9,235.9 L501.9,235.4 L507.9,235.5 L513.9,235.9 L519.9,235.5 L525.9,234.2 L531.9,232.8 L537.9,232.3 L543.9,231.8 L549.9,231.5 L555.9,230.4 L561.9,229.6 L567.9,228.3 L573.9,227.5 L579.9,226.8 L585.9,225.7 L591.9,223.8 L597.9,222.3 L603.5,182.7 L606.0,221.0 L612.7,187.4 L615.6,218.7 L620.9,176.4 L623.2,217.2 L630.5,171.2 L633.7,214.4 L641.8,190.8 L645.3,214.0 L651.3,193.2 L653.9,212.9 L659.0,195.2 L661.2,212.3 L666.9,176.2 L669.4,212.3 L673.9,173.5 L675.9,213.0 L681.8,186.5 L684.4,212.9 L692.1,179.7 L695.5,213.6 L701.3,178.0 L703.8,213.8 L711.2,193.8 L714.4,213.3 L722.8,194.8 L726.5,213.3 L734.0,158.9 L737.3,213.2 L741.9,162.2 L743.9,213.9 L749.8,172.6 L752.5,215.0 L757.0,195.8 L759.0,216.2 L764.2,158.7 L766.5,216.8 L771.8,167.6 L774.1,216.8 L782.3,158.6 L786.0,216.0 L791.8,181.8 L794.4,215.7 L801.0,163.8 L803.9,216.4 L808.9,165.6 L811.0,216.1 L818.7,159.8 L822.1,215.7 L826.7,158.6 L828.8,216.1 L833.7,184.3 L835.8,216.0 L842.7,161.3 L845.8,215.9 L851.6,160.9 L854.2,214.6 L860.9,184.7 L863.8,213.8 L869.6,189.1 L872.2,212.4 L877.0,189.7 L879.1,212.2 L886.3,157.8 L889.5,212.8 L894.7,194.5 L896.9,212.8 L905.4,176.5 L909.1,213.4 L915.2,189.6 L917.9,215.1 L924.8,170.0 L927.8,217.7 L934.1,188.4 L936.9,220.4 L941.7,172.8 L943.7,221.6 L948.4,188.5 L950.4,221.6 L958.3,201.9 L961.7,221.8 L969.1,175.8 L972.4,223.2 L979.4,184.8 L982.5,224.7 L987.4,198.2 L989.6,226.1 L994.7,186.9 L996.9,227.4 L1002.6,200.9 L1005.1,228.6 L1013.6,190.1 L1017.4,231.2 L1025.8,205.9 L1029.5,234.5 L1035.9,200.1 L1038.8,235.7 L1045.2,213.6 L1048.0,235.9 L1054.1,219.1 L1056.8,237.3 L1062.8,195.2 L1065.5,239.2 L1073.8,208.5 L1077.5,242.5 L1084.0,219.6 L1086.8,244.7 L1091.7,223.4 L1093.8,245.9 L1101.4,207.0 L1104.8,247.8 L1110.7,212.5 L1113.4,248.7 L1121.0,216.8 L1124.3,248.8 L1131.5,218.0 L1134.6,251.5 L1140.6,253.5 L1146.6,254.7 L1152.6,255.7 L1158.6,256.9 L1164.6,258.2 L1170.6,259.1 L1176.6,259.5 L1182.6,259.3 L1188.6,259.7 L1194.6,260.3 L1200.6,261.1 L1206.6,262.7 L1212.6,264.7 L1218.6,266.6 L1224.6,268.1 L1230.6,269.3 L1236.6,270.5 L1242.6,270.9 L1248.6,270.4 L1254.6,270.8 L1260.6,271.9 L1266.6,270.8 L1272.6,269.2 L1278.6,268.7 L1284.6,268.6 L1290.6,268.7 L1296.6,268.8 L1302.6,268.7 L1308.6,268.1 L1314.6,268.2 L1320.6,267.7 L1326.6,267.1 L1332.6,267.6 L1338.6,268.6 L1344.6,268.6 L1350.6,269.1 L1356.6,268.8 L1362.6,269.2 L1368.6,270.1 L1374.6,270.7 L1380.6,270.7 L1386.6,270.5 L1392.6,269.8 L1398.6,270.2 L1404.6,270.9 L1410.6,271.6 L1416.6,273.0 L1422.6,273.0 L1428.6,273.3 L1434.6,273.4 L1440.0,274.0 L1440,300 Z"/>
+            </svg>
+        </div>
+        <div class="hero-inner">
+            <h1>
+                <span class="h1-line"><span class="h1-text" style="--i:0">engineering <span class="sep" aria-hidden="true">•</span></span></span>
+                <span class="h1-line"><span class="h1-text" style="--i:1">photography <span class="sep" aria-hidden="true">•</span></span></span>
+                <span class="h1-line"><span class="h1-text" style="--i:2">adventure</span></span>
+            </h1>
+            <p class="hero-sub">portfolio of projects, photography, and outdoor stories.</p>
+        </div>
     </header>
 
     <!-- about me (under hero) -->
     <section id="about" class="section about-section">
         <div class="about-container">
-            <img src="images/me.jpg" alt="vijayesh portrait" class="about-photo" />
-            
+            <figure class="about-photo-wrap">
+                <img src="images/me.jpg" alt="vijayesh portrait" class="about-photo" />
+            </figure>
+
             <div class="about-text">
                 <h2>about me</h2>
                 <p>
-                    i am an engineering student and amateur photographer and this is my blog of exploration. i work on digital design, embedded systems, 
+                    i am an engineering student and amateur photographer and this is my blog of exploration. i work on digital design, embedded systems,
                     shooting the night sky, and documenting my hikes, <!--scuba dives,-->skydives, and travels.
                 </p>
             </div>
@@ -70,663 +120,573 @@
     </section>
 
     <section id="timeline" class="section">
-    <h2>experience timeline</h2>
-    <p class="section-subtitle">teams, internships, and engineering work i've been part of.</p>
+        <h2>experience timeline</h2>
+        <p class="section-subtitle">teams, internships, and engineering work i've been part of.</p>
 
-    <div class="timeline-horizontal">
+        <div class="lanes">
+            <div class="lanes-axis" aria-hidden="true"><span>2024</span><span>2025</span><span>2026</span></div>
 
-        <div class="timeline-item baja">
-            <div class="timeline-dot"></div>
-            <a class="timeline-card" href="https://www.bajasae.net/" target="_blank" rel="noopener">
-                <div class="timeline-compact">
-                    <div class="timeline-logo">
-                        <img src="images/baja2_logo.png" alt="baja logo">
-                    </div>
-                    <h3>Baja SAE</h3>
-                    <span class="timeline-date">2024 &ndash; present</span>
-                </div>
-                <div class="timeline-details">
-                    <p>
-                        Developed electronic sensor system for Baja Car, including Rear Electronic Control Unit PCB.
-                    </p>
-                    <span class="visit-link">visit site</span>
-                </div>
-            </a>
+            <ol class="lanes-list">
+
+                <li class="lane baja">
+                    <a class="timeline-card" href="https://www.bajasae.net/" target="_blank" rel="noopener">
+                        <div class="timeline-logo">
+                            <img src="images/baja2_logo.png" alt="baja logo">
+                        </div>
+                        <div class="timeline-copy">
+                            <h3>Baja SAE</h3>
+                            <span class="timeline-date">2024 &ndash; present</span>
+                            <p>
+                                Developed electronic sensor system for Baja Car, including Rear Electronic Control Unit PCB.
+                            </p>
+                            <span class="visit-link">visit site <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="lane envo">
+                    <a class="timeline-card" href="https://envodrive.com/" target="_blank" rel="noopener">
+                        <div class="timeline-logo">
+                            <img src="images/envo_logo.png" alt="envo logo">
+                        </div>
+                        <div class="timeline-copy">
+                            <h3>Envo Drive Systems</h3>
+                            <span class="timeline-date">2025</span>
+                            <p>
+                                Redesigned Electronic harness and vehicle control PCBs.
+                                Product focused development with international compliance.
+                            </p>
+                            <span class="visit-link">visit site <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="lane tenstorrent">
+                    <a class="timeline-card" href="https://tenstorrent.com/" target="_blank" rel="noopener">
+                        <div class="timeline-logo">
+                            <img src="images/tenstorrent_logo.jpg" alt="tenstorrent logo">
+                        </div>
+                        <div class="timeline-copy">
+                            <h3>Tenstorrent</h3>
+                            <span class="timeline-date">2026</span>
+                            <p>
+                                FAE working on writing bare metal tests and C/C++ tests to determine CPU latencies in simulation.
+                                Also writing LLKs and testing for functionality.
+                            </p>
+                            <span class="visit-link">visit site <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="lane orbit">
+                    <a class="timeline-card" href="https://www.ubcorbit.com/" target="_blank" rel="noopener">
+                        <div class="timeline-logo">
+                            <img src="images/orbit_logo.png" alt="orbit logo">
+                        </div>
+                        <div class="timeline-copy">
+                            <h3>Orbit</h3>
+                            <span class="timeline-date">2026</span>
+                            <p>
+                                Optics and Simulation Developer.
+                            </p>
+                            <span class="visit-link">visit site <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></span>
+                        </div>
+                    </a>
+                </li>
+
+            </ol>
         </div>
-
-        <div class="timeline-item envo">
-            <div class="timeline-dot"></div>
-            <a class="timeline-card" href="https://envodrive.com/" target="_blank" rel="noopener">
-                <div class="timeline-compact">
-                    <div class="timeline-logo">
-                        <img src="images/envo_logo.png" alt="envo logo">
-                    </div>
-                    <h3>Envo Drive Systems</h3>
-                    <span class="timeline-date">2025</span>
-                </div>
-                <div class="timeline-details">
-                    <p>
-                        Redesigned Electronic harness and vehicle control PCBs.
-                        Product focused development with international compliance.
-                    </p>
-                    <span class="visit-link">visit site</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="timeline-item tenstorrent">
-            <div class="timeline-dot"></div>
-            <a class="timeline-card" href="https://tenstorrent.com/" target="_blank" rel="noopener">
-                <div class="timeline-compact">
-                    <div class="timeline-logo">
-                        <img src="images/tenstorrent_logo.jpg" alt="tenstorrent logo">
-                    </div>
-                    <h3>Tenstorrent</h3>
-                    <span class="timeline-date">2026</span>
-                </div>
-                <div class="timeline-details">
-                    <p>
-                        FAE working on writing bare metal tests and C/C++ tests to determine CPU latencies in simulation.
-                        Also writing LLKs and testing for functionality.
-                    </p>
-                    <span class="visit-link">visit site</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="timeline-item orbit">
-            <div class="timeline-dot"></div>
-            <a class="timeline-card" href="https://www.ubcorbit.com/" target="_blank" rel="noopener">
-                <div class="timeline-compact">
-                    <div class="timeline-logo">
-                        <img src="images/orbit_logo.png" alt="orbit logo">
-                    </div>
-                    <h3>Orbit</h3>
-                    <span class="timeline-date">2026</span>
-                </div>
-                <div class="timeline-details">
-                    <p>
-                        Optics and Simulation Developer.
-                    </p>
-                    <span class="visit-link">visit site</span>
-                </div>
-            </a>
-        </div>
-
-    </div>
     </section>
 
 
     <!-- engineering projects -->
     <section id="engineering" class="section">
         <h2>engineering projects</h2>
-        <div class="grid">
+        <div class="projects">
 
-            <div class="card" data-project="rc4">
-                <h3>rc4 fpga accelerator</h3>
-                <p>parallel fpga brute-force architecture.</p>
-            </div>
+            <article class="card" data-project="rc4">
+                <div class="card-glyph">
+                    <svg class="glyph glyph-rc4" viewBox="0 0 320 176" aria-hidden="true" focusable="false">
+                        <path class="g-bus" d="M24 30H296M24 146H296"/>
+                        <path class="g-wire" d="M64 30V62M126 30V62M188 30V62M250 30V62M64 114V146M126 114V146M188 114V146M250 114V146"/>
+                        <g class="g-core" style="--i:0"><rect x="36" y="62" width="56" height="52" rx="6"/><path d="M48 78h32M48 88h22M48 98h28"/></g>
+                        <g class="g-core" style="--i:1"><rect x="98" y="62" width="56" height="52" rx="6"/><path d="M110 78h32M110 88h22M110 98h28"/></g>
+                        <g class="g-core" style="--i:2"><rect x="160" y="62" width="56" height="52" rx="6"/><path d="M172 78h32M172 88h22M172 98h28"/></g>
+                        <g class="g-core" style="--i:3"><rect x="222" y="62" width="56" height="52" rx="6"/><path d="M234 78h32M234 88h22M234 98h28"/></g>
+                    </svg>
+                    <span class="card-plus" aria-hidden="true"></span>
+                </div>
+                <div class="card-body">
+                    <h3><button type="button" class="card-trigger">rc4 fpga accelerator</button></h3>
+                    <p>parallel fpga brute-force architecture.</p>
+                </div>
+            </article>
 
-            <div class="card" data-project="dds">
-                <h3>signal modulation</h3>
-                <p>modulating signals using lfsr on fpga.</p>
-            </div>
+            <article class="card" data-project="dds">
+                <div class="card-glyph">
+                    <svg class="glyph glyph-dds" viewBox="0 0 320 176" aria-hidden="true" focusable="false">
+                        <path class="g-guide" d="M24 34V150M78.4 34V150M132.8 34V150M187.2 34V150M241.6 34V150M296 34V150"/>
+                        <path class="g-wave" pathLength="1" d="M24.00,66.00 L25.01,57.45 L26.01,49.93 L27.02,44.35 L28.03,41.38 L29.04,41.38 L30.04,44.35 L31.05,49.93 L32.06,57.45 L33.07,66.00 L34.07,74.55 L35.08,82.07 L36.09,87.65 L37.10,90.62 L38.10,90.62 L39.11,87.65 L40.12,82.07 L41.13,74.55 L42.13,66.00 L43.14,57.45 L44.15,49.93 L45.16,44.35 L46.16,41.38 L47.17,41.38 L48.18,44.35 L49.19,49.93 L50.19,57.45 L51.20,66.00 L52.21,74.55 L53.21,82.07 L54.22,87.65 L55.23,90.62 L56.24,90.62 L57.24,87.65 L58.25,82.07 L59.26,74.55 L60.27,66.00 L61.27,57.45 L62.28,49.93 L63.29,44.35 L64.30,41.38 L65.30,41.38 L66.31,44.35 L67.32,49.93 L68.33,57.45 L69.33,66.00 L70.34,74.55 L71.35,82.07 L72.36,87.65 L73.36,90.62 L74.37,90.62 L75.38,87.65 L76.39,82.07 L77.39,74.55 L78.40,66.00 L78.40,66.00 L79.41,63.10 L80.41,60.23 L81.42,57.45 L82.43,54.78 L83.44,52.26 L84.44,49.93 L85.45,47.82 L86.46,45.95 L87.47,44.35 L88.47,43.04 L89.48,42.05 L90.49,41.38 L91.50,41.04 L92.50,41.04 L93.51,41.38 L94.52,42.05 L95.53,43.04 L96.53,44.35 L97.54,45.95 L98.55,47.82 L99.56,49.93 L100.56,52.26 L101.57,54.78 L102.58,57.45 L103.59,60.23 L104.59,63.10 L105.60,66.00 L106.61,68.90 L107.61,71.77 L108.62,74.55 L109.63,77.22 L110.64,79.74 L111.64,82.07 L112.65,84.18 L113.66,86.05 L114.67,87.65 L115.67,88.96 L116.68,89.95 L117.69,90.62 L118.70,90.96 L119.70,90.96 L120.71,90.62 L121.72,89.95 L122.73,88.96 L123.73,87.65 L124.74,86.05 L125.75,84.18 L126.76,82.07 L127.76,79.74 L128.77,77.22 L129.78,74.55 L130.79,71.77 L131.79,68.90 L132.80,66.00 L132.80,66.00 L133.81,57.45 L134.81,49.93 L135.82,44.35 L136.83,41.38 L137.84,41.38 L138.84,44.35 L139.85,49.93 L140.86,57.45 L141.87,66.00 L142.87,74.55 L143.88,82.07 L144.89,87.65 L145.90,90.62 L146.90,90.62 L147.91,87.65 L148.92,82.07 L149.93,74.55 L150.93,66.00 L151.94,57.45 L152.95,49.93 L153.96,44.35 L154.96,41.38 L155.97,41.38 L156.98,44.35 L157.99,49.93 L158.99,57.45 L160.00,66.00 L161.01,74.55 L162.01,82.07 L163.02,87.65 L164.03,90.62 L165.04,90.62 L166.04,87.65 L167.05,82.07 L168.06,74.55 L169.07,66.00 L170.07,57.45 L171.08,49.93 L172.09,44.35 L173.10,41.38 L174.10,41.38 L175.11,44.35 L176.12,49.93 L177.13,57.45 L178.13,66.00 L179.14,74.55 L180.15,82.07 L181.16,87.65 L182.16,90.62 L183.17,90.62 L184.18,87.65 L185.19,82.07 L186.19,74.55 L187.20,66.00 L187.20,66.00 L188.21,57.45 L189.21,49.93 L190.22,44.35 L191.23,41.38 L192.24,41.38 L193.24,44.35 L194.25,49.93 L195.26,57.45 L196.27,66.00 L197.27,74.55 L198.28,82.07 L199.29,87.65 L200.30,90.62 L201.30,90.62 L202.31,87.65 L203.32,82.07 L204.33,74.55 L205.33,66.00 L206.34,57.45 L207.35,49.93 L208.36,44.35 L209.36,41.38 L210.37,41.38 L211.38,44.35 L212.39,49.93 L213.39,57.45 L214.40,66.00 L215.41,74.55 L216.41,82.07 L217.42,87.65 L218.43,90.62 L219.44,90.62 L220.44,87.65 L221.45,82.07 L222.46,74.55 L223.47,66.00 L224.47,57.45 L225.48,49.93 L226.49,44.35 L227.50,41.38 L228.50,41.38 L229.51,44.35 L230.52,49.93 L231.53,57.45 L232.53,66.00 L233.54,74.55 L234.55,82.07 L235.56,87.65 L236.56,90.62 L237.57,90.62 L238.58,87.65 L239.59,82.07 L240.59,74.55 L241.60,66.00 L241.60,66.00 L242.61,63.10 L243.61,60.23 L244.62,57.45 L245.63,54.78 L246.64,52.26 L247.64,49.93 L248.65,47.82 L249.66,45.95 L250.67,44.35 L251.67,43.04 L252.68,42.05 L253.69,41.38 L254.70,41.04 L255.70,41.04 L256.71,41.38 L257.72,42.05 L258.73,43.04 L259.73,44.35 L260.74,45.95 L261.75,47.82 L262.76,49.93 L263.76,52.26 L264.77,54.78 L265.78,57.45 L266.79,60.23 L267.79,63.10 L268.80,66.00 L269.81,68.90 L270.81,71.77 L271.82,74.55 L272.83,77.22 L273.84,79.74 L274.84,82.07 L275.85,84.18 L276.86,86.05 L277.87,87.65 L278.87,88.96 L279.88,89.95 L280.89,90.62 L281.90,90.96 L282.90,90.96 L283.91,90.62 L284.92,89.95 L285.93,88.96 L286.93,87.65 L287.94,86.05 L288.95,84.18 L289.96,82.07 L290.96,79.74 L291.97,77.22 L292.98,74.55 L293.99,71.77 L294.99,68.90 L296.00,66.00"/>
+                        <path class="g-bits" d="M24 150V128H78.4V150H132.8V128H241.6V150H296"/>
+                    </svg>
+                    <span class="card-plus" aria-hidden="true"></span>
+                </div>
+                <div class="card-body">
+                    <h3><button type="button" class="card-trigger">signal modulation</button></h3>
+                    <p>modulating signals using lfsr on fpga.</p>
+                </div>
+            </article>
 
-            <div class="card" data-project="ecu">
-                <h3>rear ecu for off-road vehicle</h3>
-                <p>signal collection and data processing.</p>
-            </div>
+            <article class="card" data-project="ecu">
+                <div class="card-glyph">
+                    <svg class="glyph glyph-ecu" viewBox="0 0 320 176" aria-hidden="true" focusable="false">
+                        <path class="g-bus g-can-h" d="M16 48H304"/>
+                        <path class="g-bus g-can-l" d="M16 128H304"/>
+                        <path class="g-wire" d="M52 48V72M52 104V128M160 48V64M160 112V128M268 48V72M268 104V128"/>
+                        <rect class="g-node" x="28" y="72" width="48" height="32" rx="5"/>
+                        <rect class="g-node" x="244" y="72" width="48" height="32" rx="5"/>
+                        <rect class="g-chip" x="120" y="64" width="80" height="48" rx="5"/>
+                        <rect class="g-die" x="140" y="76" width="40" height="24" rx="3"/>
+                        <path class="g-pins" d="M112 76h8M112 88h8M112 100h8M200 76h8M200 88h8M200 100h8"/>
+                    </svg>
+                    <span class="card-plus" aria-hidden="true"></span>
+                </div>
+                <div class="card-body">
+                    <h3><button type="button" class="card-trigger">rear ecu for off-road vehicle</button></h3>
+                    <p>signal collection and data processing.</p>
+                </div>
+            </article>
 
-            <div class="card" data-project="van">
-                <h3>van helsing platformer</h3>
-                <p>python platformer using pygame.</p>
-            </div>
+            <article class="card" data-project="van">
+                <div class="card-glyph">
+                    <svg class="glyph glyph-van" viewBox="0 0 320 176" aria-hidden="true" focusable="false">
+                        <path class="g-jump" d="M50 118C86 40 150 40 178 94"/>
+                        <rect class="g-plat" x="16" y="138" width="112" height="14" rx="2"/>
+                        <rect class="g-plat" x="168" y="138" width="136" height="14" rx="2"/>
+                        <rect class="g-plat" x="150" y="96" width="60" height="10" rx="2"/>
+                        <rect class="g-plat" x="238" y="66" width="56" height="10" rx="2"/>
+                        <g class="g-enemy"><rect x="252" y="46" width="20" height="20" rx="3"/><path d="M258 54v3M266 54v3"/></g>
+                        <g class="g-player"><rect x="36" y="112" width="16" height="26" rx="3"/><path d="M42 120v3M47 120v3"/></g>
+                    </svg>
+                    <span class="card-plus" aria-hidden="true"></span>
+                </div>
+                <div class="card-body">
+                    <h3><button type="button" class="card-trigger">van helsing platformer</button></h3>
+                    <p>python platformer using pygame.</p>
+                </div>
+            </article>
             <!--
-            <div class="card" data-project="hand gesture puppet">
-                <h3>hand gesture puppet</h3>
-                <p>open cv hand gesture recognition.</p>
-            </div>
+            <article class="card" data-project="hand gesture puppet">
+                <div class="card-glyph"><span class="card-plus" aria-hidden="true"></span></div>
+                <div class="card-body">
+                    <h3><button type="button" class="card-trigger">hand gesture puppet</button></h3>
+                    <p>open cv hand gesture recognition.</p>
+                </div>
+            </article>
             -->
-            
+
         </div>
     </section>
 
     <!-- photography -->
-    <section id="photos" class="section">
+    <section id="photos" class="section section-wide">
         <h2>photography</h2>
         <p class="section-subtitle">night sky images and other cool photos<!--, long exposures, deep-sky captures-->.</p>
 
-
-        <div class="gallery-grid">
-
-
-        <div class="image-wrapper">
-            <img src="images/jelly2.jpg" data-lightbox="true">
-            <a href="images/jelly2.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
+        <div class="gallery">
+            <figure class="shot">
+                <img class="fade" src="images/jelly2.jpg" alt="jelly" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/jelly2.jpg" download class="download-btn" aria-label="download jelly"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/jelly1.jpg" alt="jelly" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/jelly1.jpg" download class="download-btn" aria-label="download jelly"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/bust.jpg" alt="bust" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/bust.jpg" download class="download-btn" aria-label="download bust"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/momson.jpg" alt="momson" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/momson.jpg" download class="download-btn" aria-label="download momson"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/startrails.jpg" alt="startrails" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/startrails.jpg" download class="download-btn" aria-label="download startrails"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/foggyclock.jpg" alt="foggyclock" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/foggyclock.jpg" download class="download-btn" aria-label="download foggyclock"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/foggynight1.jpg" alt="foggynight" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/foggynight1.jpg" download class="download-btn" aria-label="download foggynight"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/foggynight2.jpg" alt="foggynight" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/foggynight2.jpg" download class="download-btn" aria-label="download foggynight"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/batman.jpg" alt="batman" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/batman.jpg" download class="download-btn" aria-label="download batman"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/soundwave.jpg" alt="soundwave" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/soundwave.jpg" download class="download-btn" aria-label="download soundwave"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/astro2.jpg" alt="astro" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/astro2.jpg" download class="download-btn" aria-label="download astro"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/astro3.jpg" alt="astro" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/astro3.jpg" download class="download-btn" aria-label="download astro"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/astro5.jpg" alt="astro" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/astro5.jpg" download class="download-btn" aria-label="download astro"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/soul2.jpg" alt="soul" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/soul.jpg" download class="download-btn" aria-label="download soul"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
         </div>
-
-        <div class="image-wrapper">
-            <img src="images/jelly1.jpg" data-lightbox="true">
-            <a href="images/jelly1.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/bust.jpg" data-lightbox="true">
-            <a href="images/bust.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-        <div class="image-wrapper">
-            <img src="images/momson.jpg" data-lightbox="true">
-            <a href="images/momson.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-        
-        <div class="image-wrapper">
-            <img src="images/startrails.jpg" data-lightbox="true">
-            <a href="images/startrails.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-
-        <div class="image-wrapper">
-            <img src="images/foggyclock.jpg" data-lightbox="true">
-            <a href="images/foggyclock.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/foggynight1.jpg" data-lightbox="true">
-            <a href="images/foggynight1.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/foggynight2.jpg" data-lightbox="true">
-            <a href="images/foggynight2.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/batman.jpg" data-lightbox="true">
-            <a href="images/batman.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/soundwave.jpg" data-lightbox="true">
-            <a href="images/soundwave.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-
-        <div class="image-wrapper">
-            <img src="images/astro2.jpg" data-lightbox="true">
-            <a href="images/astro2.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/astro3.jpg" data-lightbox="true">
-            <a href="images/astro3.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-
-
-        <div class="image-wrapper">
-            <img src="images/astro5.jpg" data-lightbox="true">
-            <a href="images/astro5.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/soul2.jpg" data-lightbox="true">
-            <a href="images/soul.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-    </div>
     </section>
 
     <!-- adventures -->
-    <section id="adventure" class="section">
+    <section id="adventure" class="section section-wide">
         <h2>adventures</h2>
         <p class="section-subtitle">hiking • scuba • skydiving • travel</p>
 
-        <div class="gallery-grid">
-
-        <div class="image-wrapper">
-            <img src="images/skyline.jpg" data-lightbox="true">
-            <a href="images/skyline.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-        <div class="image-wrapper">
-            <video class="adventure-thumb" muted preload="metadata" playsinline>
-                <source src="videos/skydiving.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div id="video-lightbox">
-            <span id="video-lightbox-close">×</span>
-            <video id="video-lightbox-video" controls playsinline></video>
-        </div>
-
-        <div class="image-wrapper">
-            <img src="images/wedgemount.jpg" data-lightbox="true">
-            <a href="images/wedgemount.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>            
-        <div class="image-wrapper">
-            <img src="images/lakelouise.jpg" data-lightbox="true">
-            <a href="images/lakelouise.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" class="download-icon">
-                    <path fill="currentColor"
-                        d="M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1zm7-3l5-5h-3V4h-4v8H7l5 5z"/>
-                </svg>
-            </a>
-        </div>
-
-        
-
-
-
-        <!--end of the gallery div-->
+        <div class="gallery gallery-adventure">
+            <figure class="shot">
+                <img class="fade" src="images/skyline.jpg" alt="skyline" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/skyline.jpg" download class="download-btn" aria-label="download skyline"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot shot-video" data-video="videos/skydiving.mp4" role="button" tabindex="0" aria-label="play skydiving video" style="--ratio:1.778">
+                <video muted preload="metadata" playsinline src="videos/skydiving.mp4#t=0.1"></video>
+                <div class="shot-play" aria-hidden="true"><span><svg class="icon"><use href="#i-play"/></svg></span></div>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/wedgemount.jpg" alt="wedgemount" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/wedgemount.jpg" download class="download-btn" aria-label="download wedgemount"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
+            <figure class="shot">
+                <img class="fade" src="images/lakelouise.jpg" alt="lakelouise" data-lightbox="true" loading="lazy" decoding="async" tabindex="0" />
+                <a href="images/lakelouise.jpg" download class="download-btn" aria-label="download lakelouise"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+            </figure>
         </div>
 
         <!-- bucket list & completed, combined into one collapsible -->
-        <div class="subsection collapsible-section">
-            <div class="collapsible-header">
-                <h3>adventure list</h3>
-                <span class="arrow">▶</span>
-            </div>
-            <div class="collapsible-content">
-                <div class="adventure-columns">
+        <div class="collapsible">
+            <h3 class="collapsible-title">
+                <button type="button" class="collapsible-header" aria-expanded="false" aria-controls="adventure-list-body">
+                    <span>adventure list</span>
+                    <svg class="icon arrow" aria-hidden="true"><use href="#i-chev-down"/></svg>
+                </button>
+            </h3>
+            <div class="collapsible-body" id="adventure-list-body">
+                <div class="collapsible-inner">
+                    <div class="adventure-columns">
 
-                    <div>
-                        <h4>bucket list</h4>
-                        <ul class="adventure-list">
-                            <li>scuba certification</li>
-                            <li>whistler zipline</li>
-                            <li>whistler bungee</li>
-                            <li>skiing</li>
-                            <li>snowboarding</li>
-                            <li>paraglide</li>
-                            <li>hike to panorama ridge</li>
-                            <li>wakeboard</li>
-                            <li>cold plunge</li>
-                            <li>run a half marathon</li>
-                            <li>snorkel</li>
-                            <li>ride a horse</li>
-                            <li>go on a hot air balloon</li>
-                            <li>jump off a cliff</li>
-                            <li>car racing</li>
-                            <li>drift a car</li>
-                            <li>bc caving</li>
-                            <li>cross canada trip (train or car)</li>
-                        </ul>
+                        <div>
+                            <h4>bucket list</h4>
+                            <ul class="adventure-list">
+                                <li>scuba certification</li>
+                                <li>whistler zipline</li>
+                                <li>whistler bungee</li>
+                                <li>skiing</li>
+                                <li>snowboarding</li>
+                                <li>paraglide</li>
+                                <li>hike to panorama ridge</li>
+                                <li>wakeboard</li>
+                                <li>cold plunge</li>
+                                <li>run a half marathon</li>
+                                <li>snorkel</li>
+                                <li>ride a horse</li>
+                                <li>go on a hot air balloon</li>
+                                <li>jump off a cliff</li>
+                                <li>car racing</li>
+                                <li>drift a car</li>
+                                <li>bc caving</li>
+                                <li>cross canada trip (train or car)</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4>completed</h4>
+                            <ul class="adventure-list completed">
+                                <li>skydiving (british columbia)</li>
+                                <li>hike wedgemount (british columbia)</li>
+                                <li>alaskan cruise</li>
+                                <li>ride a camel (india)</li>
+                                <li>gokarting (richmond)</li>
+                                <li>escape room (kingston - improbable escapes)</li>
+                                <li>kayaking (toronto - cherry beach)</li>
+                                <li>boating license</li>
+                            </ul>
+                        </div>
+
                     </div>
-
-                    <div>
-                        <h4>completed</h4>
-                        <ul class="adventure-list completed">
-                            <li>skydiving (british columbia)</li>
-                            <li>hike wedgemount (british columbia)</li>
-                            <li>alaskan cruise</li>
-                            <li>ride a camel (india)</li>
-                            <li>gokarting (richmond)</li>
-                            <li>escape room (kingston - improbable escapes)</li>
-                            <li>kayaking (toronto - cherry beach)</li>
-                            <li>boating license</li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
         </div>
     </section>
 
     <!-- reviews -->
-<section id="reviews" class="section">
-    <h2>book & movie reviews</h2>
-    <p class="section-subtitle">things i've read or watched recently.</p>
+    <section id="reviews" class="section">
+        <h2>book &amp; movie reviews</h2>
+        <p class="section-subtitle">things i've read or watched recently.</p>
 
-    <div class="reviews-grid">
+        <div class="review-filters" role="group" aria-label="filter reviews">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">all</button>
+            <button type="button" class="chip" data-filter="book" aria-pressed="false">book</button>
+            <button type="button" class="chip" data-filter="movie" aria-pressed="false">movie</button>
+        </div>
 
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/neuro.jpg" alt="Neuromancer cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>Neuromancer</h3>
-                        <span class="review-kind">book &middot; William Gibson</span>
-                        <span class="stars unrated" aria-label="5 out of 5">
-                            <span class="stars-fill" style="width:100%"></span>
-                        </span>
+        <div class="reviews-grid">
+            <article class="review" data-kind="book">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/neuro.jpg" alt="Neuromancer cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">One of my favorite books, so good.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>Neuromancer</h3>
+                    <span class="review-kind">book &middot; William Gibson</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:5" role="img" aria-label="5 out of 5"></span>
                         <span class="review-score">5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">One of my favorite books, so good.</p>
-                </div>
             </article>
-        </div>
 
-
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/akira.jpg" alt="Akira cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>Akira</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="2 out of 5">
-                            <span class="stars-fill" style="width:40%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/akira.jpg" alt="Akira cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">Artistically good movie. Plotwise, horrible. Had to watch twice to make sure.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>Akira</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:2" role="img" aria-label="2 out of 5"></span>
                         <span class="review-score">2 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">Artistically good movie. Plotwise, horrible. Had to watch twice to make sure.</p>
-                </div>
             </article>
-        </div>
 
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/thegrandbudapesthotel.jpg" alt="The Grand Budapest Hotel poster" class="review-cover">
-                    <div class="review-heading">
-                        <h3>The Grand Budapest Hotel</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars" aria-label="5 out of 5 stars">
-                            <span class="stars-fill" style="width:100%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/thegrandbudapesthotel.jpg" alt="The Grand Budapest Hotel poster" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">A visually unique film, with each environment and setting unlike other films, and framing of characters truly fascinating. It almost felt like a play on tv.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>The Grand Budapest Hotel</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:5" role="img" aria-label="5 out of 5"></span>
                         <span class="review-score">5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p>
-                        A visually unique film, with each environment and setting unlike other films, and framing of
-                        characters truly fascinating. It almost felt like a play on tv.
-                    </p>
-                </div>
             </article>
-        </div>
 
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/thealchemist.jpg" alt="The Alchemist cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>The Alchemist</h3>
-                        <span class="review-kind">book &middot; Paulo Coelho</span>
-                        <span class="stars" aria-label="3.5 out of 5 stars">
-                            <span class="stars-fill" style="width:70%"></span>
-                        </span>
+            <article class="review" data-kind="book">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/thealchemist.jpg" alt="The Alchemist cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">The story and premise is incredibly engaging, and Santiago's growth and development are fascinating, however, the plot slows down significantly, and results in a narrative that becomes very repetitive midway through the book.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>The Alchemist</h3>
+                    <span class="review-kind">book &middot; Paulo Coelho</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:3.5" role="img" aria-label="3.5 out of 5"></span>
                         <span class="review-score">3.5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p>
-                        The story and premise is incredibly engaging, and Santiago's growth and development are
-                        fascinating, however, the plot slows down significantly, and results in a narrative that
-                        becomes very repetitive midway through the book.
-                    </p>
-                </div>
             </article>
-        </div>
 
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/shaw.jpg" alt="Shawshank Redemption cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>Shawshank Redemption</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="5 out of 5">
-                            <span class="stars-fill" style="width:100%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/shaw.jpg" alt="Shawshank Redemption cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">Easily one of my favorite movies, perfectly told.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>Shawshank Redemption</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:5" role="img" aria-label="5 out of 5"></span>
                         <span class="review-score">5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">Easily one of my favorite movies, perfectly told.</p>
-                </div>
             </article>
-        </div>
 
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/sixth.jpg" alt="Sixth Sense cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>Sixth Sense</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="5 out of 5">
-                            <span class="stars-fill" style="width:100%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/sixth.jpg" alt="Sixth Sense cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">First watch was insane, rewatch was equally awesome.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>Sixth Sense</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:5" role="img" aria-label="5 out of 5"></span>
                         <span class="review-score">5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">First watch was insane, rewatch was equally awesome.</p>
-                </div>
             </article>
-        </div>
 
-
-
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/godf.jpg" alt="The Godfather cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>The Godfather</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="4 out of 5">
-                            <span class="stars-fill" style="width:0%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/godf.jpg" alt="The Godfather cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">A bit long, but very entertaining.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>The Godfather</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:4" role="img" aria-label="4 out of 5"></span>
                         <span class="review-score">4 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">A bit long, but very entertaining.</p>
-                </div>
             </article>
-        </div>
 
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/fight.jpg" alt="Fight Club cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>Fight Club</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="5 out of 5">
-                            <span class="stars-fill" style="width:100%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/fight.jpg" alt="Fight Club cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">Really cool acting and a fun story.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>Fight Club</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:5" role="img" aria-label="5 out of 5"></span>
                         <span class="review-score">5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">Really cool acting and a fun story.</p>
-                </div>
             </article>
-        </div>
 
-
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/whip.jpg" alt="Whiplash cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>Whiplash</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="5 out of 5">
-                            <span class="stars-fill" style="width:100%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/whip.jpg" alt="Whiplash cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">Definitely one of my favorites.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>Whiplash</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:5" role="img" aria-label="5 out of 5"></span>
                         <span class="review-score">5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">Definitely one of my favorites.</p>
-                </div>
             </article>
-        </div>
 
-        
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/ody.jpg" alt="The Odyssey cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>The Odyssey</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="4 out of 5">
-                            <span class="stars-fill" style="width:80%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/ody.jpg" alt="The Odyssey cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">Excellent movie, except I would've preferred more story of the main character.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>The Odyssey</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:4" role="img" aria-label="4 out of 5"></span>
                         <span class="review-score">4 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">Excellent movie, except I would've preferred more story of the main character.</p>
-                </div>
             </article>
-        </div>
 
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/shine.jpg" alt="The Shining cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>The Shining</h3>
-                        <span class="review-kind">movie</span>
-                        <span class="stars unrated" aria-label="2.5 out of 5">
-                            <span class="stars-fill" style="width:50%"></span>
-                        </span>
+            <article class="review" data-kind="movie">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/shine.jpg" alt="The Shining cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">Hated the ending, also kinda felt director took too many liberties and shifted away from the story.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>The Shining</h3>
+                    <span class="review-kind">movie</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:2.5" role="img" aria-label="2.5 out of 5"></span>
                         <span class="review-score">2.5 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p class="review-verdict">Hated the ending, also kinda felt director took too many liberties and shifted away from the story.</p>
-                </div>
             </article>
-        </div>
 
-        
-        <div class="review-card-slot">
-            <article class="review-card">
-                <div class="review-compact">
-                    <img src="images/thetrial.jpg" alt="The Trial cover" class="review-cover">
-                    <div class="review-heading">
-                        <h3>The Trial</h3>
-                        <span class="review-kind">book &middot; Franz Kafka</span>
-                        <span class="stars unrated" aria-label="3 out of 5">
-                            <span class="stars-fill" style="width:60%"></span>
-                        </span>
+            <article class="review" data-kind="book">
+                <div class="review-poster" role="button" tabindex="0">
+                    <img class="review-cover" src="images/thetrial.jpg" alt="The Trial cover" loading="lazy" decoding="async">
+                    <svg class="icon poster-hint" aria-hidden="true"><use href="#i-quote"/></svg>
+                    <div class="review-details">
+                        <p class="review-verdict">Hard to pick up, equally hard to put down.</p>
+                    </div>
+                </div>
+                <div class="review-heading">
+                    <h3>The Trial</h3>
+                    <span class="review-kind">book &middot; Franz Kafka</span>
+                    <div class="review-rating">
+                        <span class="stars" style="--score:3" role="img" aria-label="3 out of 5"></span>
                         <span class="review-score">3 / 5</span>
                     </div>
                 </div>
-                <div class="review-details">
-                    <p>Hard to pick up, equally hard to put down.</p>
-                </div>
             </article>
         </div>
+    </section>
 
-
-
-    </div>
-</section>
-
-
+    </main>
 
     <footer>
         <p>©vijayesh</p>
+        <a class="to-top" href="#top" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
     </footer>
 
     <!-- slide-in project panel -->
-    <div id="project-panel">
-        <button id="panel-close">×</button>
+    <div id="scrim" aria-hidden="true"></div>
+    <aside id="project-panel" role="dialog" aria-modal="false" aria-label="project details">
+        <div class="panel-bar">
+            <button id="panel-close" type="button" aria-label="Close project details"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        </div>
         <div id="project-content"></div>
+    </aside>
+
+    <!-- image + video lightbox -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="enlarged media" aria-hidden="true">
+        <button id="lightbox-close" class="lb-btn" type="button" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        <button id="lightbox-prev" class="lb-btn lightbox-nav" type="button" aria-label="Previous image"><svg class="icon" aria-hidden="true"><use href="#i-chev-left"/></svg></button>
+        <img id="lightbox-img" src="" alt="enlarged image" hidden />
+        <video id="lightbox-video" controls playsinline hidden></video>
+        <button id="lightbox-next" class="lb-btn lightbox-nav" type="button" aria-label="Next image"><svg class="icon" aria-hidden="true"><use href="#i-chev-right"/></svg></button>
     </div>
 
-    <!-- image lightbox -->
-    <div id="lightbox">
-        <span id="lightbox-close">×</span>
-        <span id="lightbox-prev" class="lightbox-nav">&#10094;</span>
-        <img id="lightbox-img" src="" alt="enlarged image" />
-        <span id="lightbox-next" class="lightbox-nav">&#10095;</span>
-    </div>
-
-    <script src="script.js"></script>
-
-
-    
 </body>
 </html>
-
